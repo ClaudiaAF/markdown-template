@@ -3,8 +3,6 @@ Commonplace Book
 
 A commonplace book written in Markdown.
 
-[![License][license-image]][license-url]
-
 Usage
 -----
 
@@ -28,6 +26,8 @@ To run tests:
 
 License
 -------
+
+[![License][license-image]][license-url]
 
 Released under the MIT License. See the [LICENSE](LICENSE) file
 for details.
