@@ -1,10 +1,9 @@
 /* global $ */
+/* jshint asi:true */
 
 var md = window.markdownit({ typographer: true })
 var attr = window.markdownItAttrs
-// var figures = window.markdownItImplicitFigures
 md.use(attr)
-// md.use(figures)
 
 function convert (markdown) {
   var html = md.render(markdown)
@@ -29,8 +28,8 @@ function floats () {
   })
 }
 
-function punctuation () {
-  // https://github.com/kellym/smartquotesjs
+// https://github.com/kellym/smartquotesjs
+function smartquotes () {
   var root = document.body
   var node = root.childNodes[0]
   while (node !== null) {
@@ -98,7 +97,7 @@ function title () {
 function process (markdown) {
   convert(markdown)
   floats()
-  punctuation()
+  smartquotes()
   title()
 }
 

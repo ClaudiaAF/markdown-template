@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "open index.html",
-    "test": "standard js/custom.js"
+    "test": "jshint js/custom.js && standard js/custom.js"
   },
   "url": "https://github.com/epsil/commonplace"
 }
