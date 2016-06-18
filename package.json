@@ -8,7 +8,7 @@
   "scripts": {
     "edit": "emacs contents.txt",
     "start": "open index.html",
-    "test": "jshint js/custom.js && standard js/custom.js"
+    "test": "jshint js/custom.js && standard js/custom.js && markdownlint contents.txt"
   },
   "url": "https://github.com/epsil/commonplace"
 }
