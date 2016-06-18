@@ -6,6 +6,7 @@
     "url": "https://github.com/epsil/commonplace.git"
   },
   "scripts": {
+    "start": "open index.html",
     "test": "standard js/custom.js"
   },
   "url": "https://github.com/epsil/commonplace"
