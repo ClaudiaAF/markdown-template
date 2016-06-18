@@ -12,6 +12,10 @@ To view the book, open `index.html` in a browser.
 
 ### Command line
 
+To edit the book:
+
+    $ npm run edit
+
 To view the book:
 
     $ npm start

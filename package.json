@@ -6,6 +6,7 @@
     "url": "https://github.com/epsil/commonplace.git"
   },
   "scripts": {
+    "edit": "emacs contents.txt",
     "start": "open index.html",
     "test": "jshint js/custom.js && standard js/custom.js"
   },
