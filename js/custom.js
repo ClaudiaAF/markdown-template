@@ -100,7 +100,3 @@ function process (markdown) {
   smartquotes()
   title()
 }
-
-$(function () {
-  $.get('contents.txt', process, 'text')
-})
