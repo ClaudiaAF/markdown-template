@@ -19,3 +19,9 @@ To view the book:
 To run tests:
 
     $ npm test
+
+License
+-------
+
+Released under the MIT License. See the [LICENSE](LICENSE) file
+for details.
