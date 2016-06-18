@@ -1,0 +1,12 @@
+{
+  "name": "commonplace",
+  "author": "Vegard Øye",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/epsil/commonplace.git"
+  },
+  "scripts": {
+    "test": "standard js/custom.js"
+  },
+  "url": "https://github.com/epsil/commonplace"
+}
