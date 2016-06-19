@@ -1,7 +1,7 @@
 Commonplace Book
 ================
 
-A commonplace book written in Markdown.
+> A commonplace book written in Markdown.
 
 Usage
 -----
