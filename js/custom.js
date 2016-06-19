@@ -1,7 +1,7 @@
 /* global $ */
 /* jshint asi:true */
 
-var md = window.markdownit({ typographer: true })
+var md = window.markdownit({ html: true, typographer: true })
 var attr = window.markdownItAttrs
 md.use(attr)
 
