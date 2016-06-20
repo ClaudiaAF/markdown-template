@@ -100,3 +100,13 @@ function process (markdown) {
   smartquotes()
   title()
 }
+
+$(function () {
+  var iframe = $('iframe');
+  iframe.hide();
+  iframe.on('load', function () {
+    var markdown = $(this).contents().text()
+    process(markdown)
+    $(this).remove()
+  })
+})
