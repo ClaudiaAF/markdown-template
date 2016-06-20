@@ -26,16 +26,16 @@ body {
     margin-bottom: 5%;
 }
 code {
-	background-color: #f5f5f5;
-	border-radius: 3px;
-	border: 1px solid #ccc;
-	color: #000;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    color: #000;
     font-family: Consolas, "Consolas Web", "Liberation Mono", Courier, monospace !important;
     font-size: 0.8em !important;
 }
 pre code {
     font-size: 1em !important;
-	border: none;
+    border: none;
 }
 h1, h2, h3, h4, h5, h6, strong, b, .minibutton {
     font-family: Optima, "Optima Web", Candara, Futura, "Gill Sans",
@@ -113,6 +113,8 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 }
 .figure {
     border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
     display: inline-block;
     font-size: 80%;
     line-height: 1.35;
@@ -171,5 +173,5 @@ table tr:nth-child(2n) {
     background-color: #f8f8f8;
 }
 iframe {
-	display: none;
+    display: none;
 }
