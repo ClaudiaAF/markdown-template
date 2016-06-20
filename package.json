@@ -6,9 +6,9 @@
     "url": "https://github.com/epsil/markdown-template.git"
   },
   "scripts": {
-    "edit": "emacs markdown.txt",
-    "start": "open index.html",
-    "test": "jshint js/custom.js && standard js/custom.js && markdownlint markdown.txt"
+    "edit": "emacs mail.txt",
+    "start": "run.bat",
+    "test": "jshint js/custom.js && standard js/custom.js && markdownlint mail.txt"
   },
   "url": "https://github.com/epsil/markdown-template"
 }
