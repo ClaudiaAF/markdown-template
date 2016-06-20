@@ -13,7 +13,7 @@ md.use(sup)
 
 function convert (markdown) {
   var html = md.render(markdown)
-  $('.container').append(html)
+  $('body').append(html)
 }
 
 function floats () {
