@@ -154,3 +154,24 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
         border: none;
     }
 }
+
+table {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    word-break: keep-all;
+}
+table th {
+    font-weight: bold;
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 6px 13px;
+}
+table tr {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+}
