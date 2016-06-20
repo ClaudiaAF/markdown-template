@@ -1,14 +1,14 @@
 {
-  "name": "commonplace",
+  "name": "markdown-template",
   "author": "Vegard Øye",
   "repository": {
     "type": "git",
-    "url": "https://github.com/epsil/commonplace.git"
+    "url": "https://github.com/epsil/markdown-template.git"
   },
   "scripts": {
-    "edit": "emacs contents.txt",
+    "edit": "emacs markdown.txt",
     "start": "open index.html",
-    "test": "jshint js/custom.js && standard js/custom.js && markdownlint contents.txt"
+    "test": "jshint js/custom.js && standard js/custom.js && markdownlint markdown.txt"
   },
-  "url": "https://github.com/epsil/commonplace"
+  "url": "https://github.com/epsil/markdown-template"
 }
