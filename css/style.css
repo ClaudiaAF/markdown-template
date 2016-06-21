@@ -175,3 +175,17 @@ table tr:nth-child(2n) {
 iframe {
     display: none;
 }
+.container .header-anchor {
+    color: #ffffff;
+    display: inline-block;
+    font-weight: normal;
+    margin-left: -1em;
+    padding-right: 0.1em;
+}
+h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:hover .header-anchor, h5:hover .header-anchor, h6:hover .header-anchor {
+    color: #cccccc;
+    text-decoration: none;
+}
+.header-anchor:hover {
+    color: #999999 !important;
+}

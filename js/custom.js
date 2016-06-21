@@ -3,7 +3,9 @@
 
 var md = window.markdownit({ html: true, typographer: true })
 var attr = window.markdownItAttrs
+var anchor = window.markdownItAnchor
 md.use(attr)
+md.use(anchor, {permalink: true, permalinkBefore: true})
 
 function convert (markdown) {
   var html = md.render(markdown)
@@ -41,7 +43,7 @@ function headers () {
       var header = $(this)
       var section = header.nextUntil(next)
       var div = section.wrapAll('<div></div>')
-      var button = $('<span title="Collapse">' + hide + '</span>')
+      var button = $('<span aria-hidden="true" title="Collapse">' + hide + '</span>')
       button.css({'color': '#999',
                   'cursor': 'pointer',
                   'float': 'right',
@@ -123,9 +125,13 @@ function smartquotes () {
 }
 
 function title () {
-  var h1 = $('h1, h2, h3, h4, h5, h6').first()
-  var txt = h1.text()
-  $('title').html(txt)
+  var header = $('h1, h2, h3, h4, h5, h6').first()
+  if (header.length > 0) {
+    header = header.clone()
+    header.find('[aria-hidden="true"]').remove()
+    var txt = header.text().trim()
+    $('title').html(txt)
+  }
 }
 
 function process (markdown) {
