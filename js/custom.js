@@ -29,30 +29,37 @@ function floats () {
 }
 
 function headers () {
-  $('h1, h2, h3, h4, h5, h6').each(function () {
-    var show = '\u25bc'
-    var hide = '\u25b2'
-    var header = $(this)
-    var section = header.nextUntil('h1, h2, h3, h4, h5, h6')
-    var div = section.wrapAll('<div></div>')
-    var button = $('<span title="Collapse">' + hide + '</span>')
-    button.css({'color': '#999',
-                'cursor': 'pointer',
-                'float': 'right',
-                'margin-top': '0.5em',
-                'font-size': '0.8em'})
-    header.append(button)
-    button.click(function () {
-      if ($(this).text() === show) {
-        $(this).text(hide)
-        $(this).attr('title', 'Collapse')
-      } else {
-        $(this).text(show)
-        $(this).attr('title', 'Expand')
-      }
-      div.toggle()
+  var show = '\u25bc'
+  var hide = '\u25b2'
+  for (var i = 6; i >= 1; i--) {
+    var stop = [];
+    for (var j = 1; j <= i; j++) {
+      stop.push('h' + j);
+    }
+    var next = stop.join(',')
+    $('h' + i).each(function () {
+      var header = $(this)
+      var section = header.nextUntil(next)
+      var div = section.wrapAll('<div></div>')
+      var button = $('<span title="Collapse">' + hide + '</span>')
+      button.css({'color': '#999',
+                  'cursor': 'pointer',
+                  'float': 'right',
+                  'margin-top': '0.3em',
+                  'font-size': '0.8em'})
+      header.append(button)
+      button.click(function () {
+        if ($(this).text() === show) {
+          $(this).text(hide)
+          $(this).attr('title', 'Collapse')
+        } else {
+          $(this).text(show)
+          $(this).attr('title', 'Expand')
+        }
+        div.toggle()
+      })
     })
-  })
+  }
 }
 
 // https://github.com/kellym/smartquotesjs
