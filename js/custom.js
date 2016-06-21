@@ -47,12 +47,7 @@ function headers () {
       var header = $(this)
       var section = header.nextUntil(next)
       var div = section.wrapAll('<div></div>')
-      var button = $('<span aria-hidden="true" title="Collapse">' + hide + '</span>')
-      button.css({'color': '#999',
-                  'cursor': 'pointer',
-                  'float': 'right',
-                  'margin-top': '0.3em',
-                  'font-size': '0.8em'})
+      var button = $('<span aria-hidden="true" class="collapse-button" title="Collapse">' + hide + '</span>')
       header.append(button)
       button.click(function () {
         if ($(this).text() === show) {

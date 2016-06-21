@@ -176,16 +176,25 @@ iframe {
     display: none;
 }
 .container .header-anchor {
-    color: #ffffff;
     display: inline-block;
     font-weight: normal;
     margin-left: -1em;
     padding-right: 0.1em;
 }
-h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:hover .header-anchor, h5:hover .header-anchor, h6:hover .header-anchor {
+.collapse-button {
+	cursor: pointer;
+	float: right;
+	margin-top: 0.3em;
+	font-size: 0.8em;
+}
+.container .header-anchor, .collapse-button {
+    color: #ffffff;
+}
+h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:hover .header-anchor, h5:hover .header-anchor, h6:hover .header-anchor,
+h1:hover .collapse-button, h2:hover .collapse-button, h3:hover .collapse-button, h4:hover .collapse-button, h5:hover .collapse-button, h6:hover .collapse-button {
     color: #cccccc;
     text-decoration: none;
 }
-.header-anchor:hover {
+.header-anchor:hover, .collapse-button:hover {
     color: #999999 !important;
 }
