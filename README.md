@@ -11,20 +11,6 @@ Edit `markdown.txt` in a text editor.
 
 Open `index.html` in a browser to see the result.
 
-### Command line
-
-To edit the Markdown:
-
-    $ npm run edit
-
-To view the result:
-
-    $ npm start
-
-To run tests:
-
-    $ npm test
-
 To do
 -----
 
