@@ -27,6 +27,7 @@ This will host the files on <http://localhost/>.
 
 Tested methods:
 [iframe](http://stackoverflow.com/questions/1796619/how-to-access-the-content-of-an-iframe-with-jquery),
+~~[$.load()](http://api.jquery.com/load/)~~,
 ~~[$.get()](https://api.jquery.com/jquery.get/)~~,
 ~~[XMLHttpRequest](http://stackoverflow.com/questions/14446447/javascript-read-local-text-file)~~.
 
