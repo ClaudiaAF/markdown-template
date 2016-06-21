@@ -14,10 +14,10 @@ Open `index.html` in a browser to see the result.
 To do
 -----
 
-Reading the contents of `markdown.txt` by using an `iframe` works well
-in Firefox and Internet Explorer, but not Chrome. Chrome sets
-limitations on local file access and requires both `index.html` and
-`markdown.txt` to be hosted on a server, for example
+Reading the contents of `markdown.txt` by using a hidden `iframe`
+works well in Firefox and Internet Explorer, but not Chrome.
+Chrome sets limitations on local file access and requires both
+`index.html` and `markdown.txt` to be hosted on a server, for example
 [http-server](https://www.npmjs.com/package/http-server):
 
     $ npm install -g http-server
