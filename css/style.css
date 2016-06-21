@@ -18,11 +18,12 @@ body, blockquote {
     color: #000 !important;
 }
 body {
+    color: rgba(0, 0, 0, 0.8) !important;
     font-family: Charter, "Iowan Old Style", Iowan, "Iowan Web", Georgia,
     "Hoefler Text", Cambria, Constantia, Utopia, Marion, Cochin,
     "Palatino Linotype", Palatino, Baskerville, serif !important;
-    font-size: 130% !important;
-    line-height: 1.58;
+    font-size: 125% !important;
+    line-height: 1.6;
     margin-top: 5%;
     margin-bottom: 5%;
 }
@@ -48,12 +49,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 1em 0 15px;
 }
 h1 {
-    border-bottom: 1px solid #eee;
     font-size: 2.5em;
     padding-bottom: 0.5em;
 }
 h2 {
-    border-bottom: 1px solid #eee;
     font-size: 2em;
 }
 h3 {
@@ -102,7 +101,10 @@ a.file:before, a.folder:before {
     z-index: 100;
 }
 blockquote {
+    border-left: 3px solid rgba(0, 0, 0, 0.8);
     font-size: 1em;
+    margin-left: -23px;
+    padding-left: 20px;
     padding: 0px 20px;
 }
 hr {
@@ -115,7 +117,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 }
 .figure {
     border: 1px solid #ccc;
-	/* border-radius: 3px; */
+    /* border-radius: 3px; */
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
     display: inline-block;
     font-size: 80%;
@@ -181,7 +183,7 @@ iframe {
     max-width: 700px;
 }
 p {
-	margin: 1.58em 0 1.58em 0;
+    margin: 1.6em 0 1.6em 0;
 }
 .container .header-anchor {
     display: inline-block;
