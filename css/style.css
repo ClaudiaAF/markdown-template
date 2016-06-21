@@ -14,9 +14,6 @@
 html {
     font-size: initial !important;
 }
-body, blockquote {
-    color: #000 !important;
-}
 body {
     color: rgba(0, 0, 0, 0.8) !important;
     font-family: Charter, "Iowan Old Style", Iowan, "Iowan Web", Georgia,
