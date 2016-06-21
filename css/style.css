@@ -188,14 +188,15 @@ p {
 .container .header-anchor {
     display: inline-block;
     font-weight: normal;
-    margin-left: -1em;
+    margin-left: -0.85em;
     padding-right: 0.1em;
 }
 .collapse-button {
-	cursor: pointer;
-	float: right;
-	margin-top: 0.3em;
-	font-size: 0.8em;
+    cursor: pointer;
+    float: right;
+    margin-top: 0.3em;
+    font-size: 0.8em;
+    margin-right: -15px;
 }
 .container .header-anchor, .collapse-button {
     color: #ffffff;
