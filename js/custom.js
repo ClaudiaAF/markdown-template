@@ -50,12 +50,16 @@ function headers () {
       var button = $('<span aria-hidden="true" class="collapse-button" title="Collapse">' + hide + '</span>')
       header.append(button)
       button.click(function () {
-        if ($(this).text() === show) {
-          $(this).text(hide)
-          $(this).attr('title', 'Collapse')
+        var button = $(this)
+        var header = button.parent()
+        if (button.text() === show) {
+          button.text(hide)
+          button.attr('title', 'Collapse')
+          header.removeClass('collapsed')
         } else {
-          $(this).text(show)
-          $(this).attr('title', 'Expand')
+          button.text(show)
+          button.attr('title', 'Expand')
+          header.addClass('collapsed')
         }
         div.toggle()
       })
