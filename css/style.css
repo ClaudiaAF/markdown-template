@@ -115,9 +115,13 @@ a.file:before, a.folder:before {
 blockquote {
     border-left: 3px solid rgba(0, 0, 0, 0.8);
     font-size: 1em;
+    font-style: italic;
     margin-left: -23px;
     padding-left: 20px;
     padding: 0px 20px;
+}
+blockquote em, blockquote i {
+    font-style: normal;
 }
 hr {
     border-color: #ccc;
