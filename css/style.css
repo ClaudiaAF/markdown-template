@@ -177,7 +177,8 @@ table tr:nth-child(2n) {
 iframe {
     display: none;
 }
-.container {
+body > .container {
+    padding: 0px 20px 0 20px;
     max-width: 700px;
 }
 p {
@@ -205,11 +206,26 @@ p {
     transition: all 0.5s;
 }
 h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:hover .header-anchor, h5:hover .header-anchor, h6:hover .header-anchor,
-h1:hover .collapse-button, h2:hover .collapse-button, h3:hover .collapse-button, h4:hover .collapse-button, h5:hover .collapse-button, h6:hover .collapse-button {
+h1:hover .collapse-button, h2:hover .collapse-button, h3:hover .collapse-button, h4:hover .collapse-button, h5:hover .collapse-button, h6:hover .collapse-button,
+.collapsed .collapse-button {
     color: #cccccc;
     text-decoration: none;
     transition: all 0.5s;
 }
 .header-anchor:hover, .collapse-button:hover {
     color: #999999 !important;
+}
+@media (max-width: 767px) {
+    body {
+        font-size: 113% !important;
+    }
+    blockquote {
+        margin-left: -20px;
+        padding-left: 17px;
+    }
+    .container .header-anchor {
+        margin-left: -0.55em;
+        margin-right: -0.2em;
+        padding-right: 0;
+    }
 }
