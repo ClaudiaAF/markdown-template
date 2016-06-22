@@ -44,6 +44,7 @@ h1, h2, h3, h4, h5, h6, strong, b, .minibutton {
 }
 h1, h2, h3, h4, h5, h6 {
     margin: 1em 0 15px;
+    padding-right: 1em;
 }
 h1 {
     font-size: 2.5em;
@@ -193,7 +194,7 @@ p {
     float: right;
     margin-top: 0.3em;
     font-size: 0.8em;
-    margin-right: -15px;
+    margin-right: -1em;
 }
 .container .header-anchor, .collapse-button {
     color: #ffffff;
