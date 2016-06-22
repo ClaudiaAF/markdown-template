@@ -20,7 +20,7 @@ body {
     "Hoefler Text", Cambria, Constantia, Utopia, Marion, Cochin,
     "Palatino Linotype", Palatino, Baskerville, serif !important;
     font-size: 125% !important;
-    line-height: 1.6;
+    line-height: 1.5;
     margin-top: 5%;
     margin-bottom: 5%;
 }
@@ -36,7 +36,7 @@ pre code {
     font-size: 1em !important;
     border: none;
 }
-h1, h2, h3, h4, h5, h6, strong, b, .minibutton {
+h1, h2, h3, h4, h5, h6 {
     font-family: "Segoe UI", Seravek, "Avenir Next", Avenir, Optima, "Optima Web",
     Candara, Futura, "Gill Sans", Calibri, Corbel,
     Helvetica, Arial, sans-serif !important;
@@ -47,15 +47,15 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 1em;
 }
 h1 {
-    font-size: 2.6em; /* 52px */
+    font-size: 2em; /* 40px */
     padding-bottom: 0.5em;
 }
 h2 {
-    font-size: 1.8em; /* 36px */
+    font-size: 1.5em; /* 30px */
 }
 h3 {
-    color: rgba(0, 0, 0, 0.44); /* 28px */
-    font-size: 1.4em;
+    color: rgba(0, 0, 0, 0.44);
+    font-size: 1.3em; /* 26px */
     font-weight: normal;
 }
 h4 {
@@ -200,7 +200,7 @@ body > .container {
     max-width: 700px;
 }
 p {
-    margin: 1.6em 0 1.6em 0;
+    margin: 1em 0 1em 0;
 }
 .container .header-anchor {
     display: inline-block;
@@ -236,6 +236,7 @@ h1:hover .collapse-button, h2:hover .collapse-button, h3:hover .collapse-button,
 @media (max-width: 767px) {
     body {
         font-size: 113% !important;
+        line-height: 1.45;
     }
     blockquote {
         margin-left: -20px;
