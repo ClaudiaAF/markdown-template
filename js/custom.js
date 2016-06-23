@@ -63,6 +63,9 @@ function headers () {
         }
         div.toggle()
       })
+      if (header.hasClass('collapsed')) {
+        button.click()
+      }
     })
   }
 }
