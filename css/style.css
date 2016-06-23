@@ -45,6 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, h4, h5, h6 {
     margin: 1em 0 15px;
     padding-right: 1em;
+    position: relative;
 }
 h1 {
     font-size: 2em; /* 40px */
@@ -205,8 +206,8 @@ p {
 .container .header-anchor {
     display: inline-block;
     font-weight: normal;
-    margin-left: -0.85em;
-    padding-right: 0.1em;
+    position: absolute;
+    left: -0.7em;
 }
 .collapsed {
     border-bottom: 1px solid #ccc;
@@ -214,10 +215,8 @@ p {
 }
 .collapse-button {
     cursor: pointer;
-    float: right;
-    margin-top: 0.3em;
-    font-size: 0.8em;
-    margin-right: -1em;
+    position: absolute;
+    right: 0em;
 }
 .container .header-anchor, .collapse-button {
     color: #ffffff;
@@ -243,8 +242,6 @@ h1:hover .collapse-button, h2:hover .collapse-button, h3:hover .collapse-button,
         padding-left: 17px;
     }
     .container .header-anchor {
-        margin-left: -0.55em;
-        margin-right: -0.2em;
-        padding-right: 0;
+        left: -0.5em;
     }
 }
