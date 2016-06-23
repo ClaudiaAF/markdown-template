@@ -1,3 +1,8 @@
+h1, h2, h3, h4, h5, h6 {
+    padding-right: 1em;
+    position: relative;
+}
+
 h1:hover .collapse-button, h2:hover .collapse-button, h3:hover .collapse-button, h4:hover .collapse-button, h5:hover .collapse-button, h6:hover .collapse-button,
 .collapsed .collapse-button {
     color: #cccccc;
