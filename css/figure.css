@@ -1,3 +1,8 @@
+.caption {
+    margin: 3px 0 0 0;
+    padding: 0;
+}
+
 .figure {
     border: 1px solid #ccc;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
@@ -6,13 +11,11 @@
     line-height: 1.35;
     padding: 3px;
 }
+
 .figure img {
     border: 1px solid #ccc;
 }
-.caption {
-    margin: 3px 0 0 0;
-    padding: 0;
-}
+
 .figure.left {
     clear: both;
     float: left;
@@ -23,6 +26,7 @@
     float: right;
     margin: 0.25em 0 1.3em 1.4em;
 }
+
 @media (max-width: 480px) {
     .figure, .figure.left, .figure.right {
         border: none;
@@ -32,6 +36,7 @@
         margin: 0 auto 1.3em auto;
         padding: 0;
     }
+
     .figure img {
         border: none;
     }
