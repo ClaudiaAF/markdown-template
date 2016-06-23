@@ -4,9 +4,9 @@
       var show = '\u25bc'
       var hide = '\u25b2'
       for (var i = 6; i >= 1; i--) {
-        var stop = [];
+        var stop = []
         for (var j = 1; j <= i; j++) {
-          stop.push('h' + j);
+          stop.push('h' + j)
         }
         var next = stop.join(',')
         $(this).find('h' + i).each(function () {
@@ -28,6 +28,7 @@
               header.addClass('collapsed')
             }
             div.toggle()
+            return false
           })
           if (header.hasClass('collapsed')) {
             button.click()

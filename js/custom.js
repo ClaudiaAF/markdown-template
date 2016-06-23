@@ -26,8 +26,8 @@ function process (markdown) {
 }
 
 $(function () {
-  var iframe = $('iframe');
-  iframe.hide();
+  var iframe = $('iframe')
+  iframe.hide()
   iframe.on('load', function () {
     var markdown = $(this).contents().text()
     process(markdown)
