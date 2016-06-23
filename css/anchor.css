@@ -1,0 +1,18 @@
+.container .header-anchor {
+    display: inline-block;
+    font-weight: normal;
+    position: absolute;
+    left: -0.7em;
+}
+.container .header-anchor {
+    color: #ffffff;
+    transition: all 0.5s;
+}
+h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:hover .header-anchor, h5:hover .header-anchor, h6:hover .header-anchor {
+    color: #cccccc;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+.header-anchor:hover {
+    color: #999999 !important;
+}
