@@ -16,6 +16,12 @@ h1:hover .collapse-button, h2:hover .collapse-button, h3:hover .collapse-button,
     position: absolute;
     right: 0em;
     transition: all 0.5s;
+    user-select: none;           /* Non-prefixed version */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
 }
 
 .collapse-button:hover {
