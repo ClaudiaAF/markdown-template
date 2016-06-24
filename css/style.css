@@ -11,6 +11,10 @@ blockquote {
     padding: 0px 20px;
 }
 
+blockquote blockquote {
+    margin-left: 0;
+}
+
 blockquote em, blockquote i {
     font-style: normal;
 }
