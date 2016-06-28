@@ -62,17 +62,19 @@ h1 {
     text-align: center;
 }
 
-h2 {
+h2, h2.collapsed {
     border-bottom: 1px solid #ccc;
     font-size: 1.5em;
     font-variant: small-caps;
     letter-spacing: 0.1em;
+    padding-bottom: 0;
 }
 
-h3 {
+h3, h3.collapsed {
     font-size: 1.2em;
     font-variant: small-caps;
     letter-spacing: 0.1em;
+    padding-bottom: 0;
 }
 
 h4 {
