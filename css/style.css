@@ -33,7 +33,11 @@ body > .container {
     padding: 0px 20px 0 20px;
 }
 
-code, pre {
+code, kbd, samp, tt {
+    white-space: nowrap;
+}
+
+code, kbd, samp, tt, pre {
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 0;
     border: none;
@@ -103,7 +107,7 @@ pre {
     padding: 1.5em;
 }
 
-pre code {
+pre code, pre kbd, pre samt, pre tt {
     font-size: 1em !important;
 }
 
