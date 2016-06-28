@@ -1,6 +1,4 @@
 /* global $ */
-/* jshint asi:true */
-
 var hljs = window.hljs
 var attr = window.markdownItAttrs
 var anchor = window.markdownItAnchor

@@ -1,3 +1,4 @@
+/* global jQuery */
 (function ($) {
   $.fn.removeAria = function () {
     return this.map(function () {

@@ -1,3 +1,4 @@
+/* global jQuery */
 (function ($) {
   $.fn.addFigures = function () {
     return this.each(function () {

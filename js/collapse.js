@@ -1,3 +1,4 @@
+/* global jQuery */
 (function ($) {
   $.fn.addCollapsibleSections = function () {
     return this.each(function () {
@@ -13,7 +14,7 @@
         for (var j = 1; j <= i; j++) {
           stop.push('h' + j)
         }
-        var next = stop.join(',')
+        var next = stop.join(', ')
 
         // process section
         $(this).find('h' + i).each(function () {
