@@ -26,6 +26,9 @@ body {
     line-height: 1.5;
     margin-bottom: 5%;
     margin-top: 5%;
+    text-rendering: optimizelegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 }
 
 body > .container {
@@ -41,9 +44,10 @@ code, kbd, samp, tt, pre {
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 0;
     border: none;
-    color: #000;
+    color: inherit;
     font-family: Consolas, "Consolas Web", Menlo, Monaco, "Liberation Mono", Courier, monospace !important;
     font-size: 0.8em !important;
+    -moz-osx-font-smoothing: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
