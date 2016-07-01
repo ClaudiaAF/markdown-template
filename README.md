@@ -11,8 +11,11 @@ Edit `markdown.txt` in a text editor.
 
 Open `index.html` in a browser to see the result.
 
-To do
------
+Miscellaneous
+-------------
+
+The example text is the article
+[General Parser Combinators in Racket](https://github.com/epsil/gll).
 
 Reading the contents of `markdown.txt` by using a hidden `iframe`
 works well in Firefox and Internet Explorer, but not Chrome.
@@ -21,7 +24,7 @@ Chrome sets limitations on local file access and requires both
 [http-server](https://www.npmjs.com/package/http-server):
 
     $ npm install -g http-server
-    $ http-server -a localhost -p 80
+    $ http-server -p 80
 
 This will host the files on <http://localhost/>.
 
