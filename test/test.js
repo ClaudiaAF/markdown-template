@@ -1,6 +1,7 @@
+/* global describe, it, $, assert */
 describe('collapse.js', function () {
   describe('addSection()', function () {
-    it('should create a section for each header', function () {
+    it('should create a section for a header', function () {
       var div = $('<div>' +
                   '<h1>Header</h1>' +
                   '<p>Paragraph one</p>' +
@@ -36,7 +37,8 @@ describe('collapse.js', function () {
                   '<p>Paragraph three</p>' +
                   '<p>Paragraph four</p>' +
                   '</div>')
-      assert.equal(div.addCollapsibleSections().html(),
+      assert.equal(div.addCollapsibleSections().prop('outerHTML'),
+                   '<div>' +
                    '<h1>Header' +
                    '<span aria-hidden="true" class="collapse-button" title="Collapse">▲</span>' +
                    '</h1>' +
@@ -49,6 +51,7 @@ describe('collapse.js', function () {
                    '<div>' +
                    '<p>Paragraph three</p>' +
                    '<p>Paragraph four</p>' +
+                   '</div>' +
                    '</div>' +
                    '</div>')
     })
@@ -63,16 +66,20 @@ describe('figure.js', function () {
                   '<img alt="Caption text" class="right" src="image.png" width="200">' +
                   '</p>' +
                   '</div>')
-      var html = div.addFigures().html()
+      var html = div.addFigures().prop('outerHTML')
       assert.isTrue(html ===
+                    '<div>' +
                     '<div style="width: 209px;" class="figure right">' +
                     '<img alt="Caption text" class="right" src="image.png" width="200">' +
                     '<p class="caption">Caption text</p>' +
+                    '</div>' +
                     '</div>' ||
                     html ===
+                    '<div>' +
                     '<div class="figure right" style="width: 209px; ">' +
                     '<img alt="Caption text" class="right" src="image.png" width="200">' +
                     '<p class="caption">Caption text</p>' +
+                    '</div>' +
                     '</div>')
     })
   })
@@ -85,17 +92,21 @@ describe('punctuation.js', function () {
                   '<p>"Tsk, tsk," said the Hatter, "what a mess you\'ve made."</p>' +
                   '<p>"It is perfectly fine," replied Alice calmly. "I will leave it for the garbage collection service to recover."</p>' +
                   '</div>')
-      assert.equal(div.addPunctuation().html(),
+      assert.equal(div.addPunctuation().prop('outerHTML'),
+                   '<div>' +
                    '<p>“Tsk, tsk,” said the Hatter, “what a mess you’ve made.”</p>' +
-                   '<p>“It is perfectly fine,” replied Alice calmly. “I will leave it for the garbage collection service to recover.”</p>')
+                   '<p>“It is perfectly fine,” replied Alice calmly. “I will leave it for the garbage collection service to recover.”</p>' +
+                   '</div>')
     })
 
     it('should add horizontal ellipsis', function () {
       var div = $('<div>' +
                   '<p>Is that so...?</p>' +
                   '</div>')
-      assert.equal(div.addPunctuation().html(),
-                   '<p>Is that so…?</p>')
+      assert.equal(div.addPunctuation().prop('outerHTML'),
+                   '<div>' +
+                   '<p>Is that so…?</p>' +
+                   '</div>')
     })
   })
 })
@@ -126,10 +137,12 @@ describe('title.js', function () {
                   '<p>Paragraph</p>' +
                   '</body>' +
                   '</div>')
-      assert.equal(div.addTitle().html(),
+      assert.equal(div.addTitle().prop('outerHTML'),
+                   '<div>' +
                    '<title>Header</title>' +
                    '<h1>Header</h1>' +
-                   '<p>Paragraph</p>')
+                   '<p>Paragraph</p>' +
+                   '</div>')
     })
   })
 })
