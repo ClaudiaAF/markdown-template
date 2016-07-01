@@ -92,7 +92,18 @@ h6 {
 }
 
 hr {
-    border-color: #ccc;
+    border: none;
+    padding: 1em 0 1em 0;
+    text-align: center;
+}
+
+hr:before {
+    color: rgba(0, 0, 0, 0.6);
+    content: "...";
+    letter-spacing: 0.6em;
+    position: relative;
+    text-align: center;
+    top: -1em;
 }
 
 html {
