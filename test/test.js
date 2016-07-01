@@ -1,6 +1,33 @@
 describe('collapse.js', function () {
+  describe('addSection()', function () {
+    it('should create a section for each header', function () {
+      var div = $('<div>' +
+                  '<h1>Header</h1>' +
+                  '<p>Paragraph one</p>' +
+                  '<p>Paragraph two</p>' +
+                  '</div>')
+      var header = div.find('h1')
+      $.fn.addCollapsibleSections.addSection(header)
+      assert.equal(div.prop('outerHTML'),
+                   '<div>' +
+                   '<h1>Header</h1>' +
+                   '<div>' +
+                   '<p>Paragraph one</p>' +
+                   '<p>Paragraph two</p>' +
+                   '</div>' +
+                   '</div>')
+    })
+  })
+
+  describe('button()', function () {
+    it('should create a button as specified', function () {
+      assert.equal($.fn.addCollapsibleSections.button('\u25b2').prop('outerHTML'),
+                   '<span aria-hidden="true" class="collapse-button" title="Collapse">▲</span>')
+    })
+  })
+
   describe('addCollapsibleSections()', function () {
-    it('should create a div element for each section', function () {
+    it('should create button for each section', function () {
       var div = $('<div>' +
                   '<h1>Header</h1>' +
                   '<p>Paragraph one</p>' +
