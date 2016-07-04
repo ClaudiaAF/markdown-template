@@ -34,8 +34,8 @@ function process (markdown) {
   $('body').addFigures()
   $('body').addPunctuation()
   $('body').addCollapsibleSections({
-    show: '\u25c0', // black left-pointing triangle
-    hide: '\u25b2'  // black up-pointing triangle
+    show: '\u25b2', // black up-pointing triangle
+    hide: '\u25bc'  // black down-pointing triangle
   })
   $('html').addTitle()
 }
