@@ -67,7 +67,7 @@
 
   // Default options
   $.fn.addCollapsibleSections.defaults = {
-    show: '\u25bc', // black down-pointing triangle
-    hide: '\u25b2'  // black up-pointing triangle
+    show: '\u25b2', // black up-pointing triangle
+    hide: '\u25bc'  // black down-pointing triangle
   }
 }(jQuery))

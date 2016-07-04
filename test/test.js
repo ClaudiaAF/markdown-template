@@ -22,8 +22,8 @@ describe('collapse.js', function () {
 
   describe('button()', function () {
     it('should create a button as specified', function () {
-      assert.equal($.fn.addCollapsibleSections.button('\u25b2').prop('outerHTML'),
-                   '<span aria-hidden="true" class="collapse-button" title="Collapse">▲</span>')
+      assert.equal($.fn.addCollapsibleSections.button('\u25bc').prop('outerHTML'),
+                   '<span aria-hidden="true" class="collapse-button" title="Collapse">▼</span>')
     })
   })
 
@@ -40,13 +40,13 @@ describe('collapse.js', function () {
       assert.equal(div.addCollapsibleSections().prop('outerHTML'),
                    '<div>' +
                    '<h1>Header' +
-                   '<span aria-hidden="true" class="collapse-button" title="Collapse">▲</span>' +
+                   '<span aria-hidden="true" class="collapse-button" title="Collapse">▼</span>' +
                    '</h1>' +
                    '<div>' +
                    '<p>Paragraph one</p>' +
                    '<p>Paragraph two</p>' +
                    '<h2>Subheader' +
-                   '<span aria-hidden="true" class="collapse-button" title="Collapse">▲</span>' +
+                   '<span aria-hidden="true" class="collapse-button" title="Collapse">▼</span>' +
                    '</h2>' +
                    '<div>' +
                    '<p>Paragraph three</p>' +
