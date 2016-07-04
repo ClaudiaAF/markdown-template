@@ -4,9 +4,9 @@ a {
 
 body {
     color: rgba(0, 0, 0, 0.8) !important;
-    font-family: Lora, "Adobe Garamond Pro", "Garamond Premier Pro", "ITC Garamond Std", Garamond, Baskerville, "Baskerville Old Face", "Crimson Text", Crimson, "Iowan Old Style", Iowan, "Iowan Web", Georgia, Charter, "Hoefler Text", "Calisto MT", Constantia, Andalus, Centaur, Cambria, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, Baskerville, serif !important;
-    font-size: 105% !important;
-    line-height: 1.4;
+    font-family: Amiri, "Adobe Garamond Pro", "Garamond Premier Pro", "ITC Garamond Std", Garamond, Baskerville, "Baskerville Old Face", "Crimson Text", Crimson, "Iowan Old Style", Iowan, "Iowan Web", Georgia, Charter, "Hoefler Text", "Calisto MT", Constantia, Andalus, Centaur, Cambria, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, Baskerville, serif !important;
+    font-size: 125% !important;
+    line-height: 1.2;
     margin-bottom: 5%;
     margin-top: 5%;
     text-rendering: optimizelegibility;
@@ -41,7 +41,7 @@ code, pre {
     border: none;
     color: inherit;
     font-family: Consolas, "Consolas Web", Menlo, Monaco, "Liberation Mono", Courier, monospace !important;
-    font-size: 0.9em;
+    font-size: 0.75em;
     -moz-osx-font-smoothing: auto;
 }
 
@@ -121,7 +121,7 @@ p {
 }
 
 p + p {
-    text-indent: 1.4em;
+    text-indent: 1.2em;
 }
 
 pre {
@@ -158,16 +158,9 @@ table tr:nth-child(2n) {
 }
 
 ol, ul {
-    padding-left: 1.4em;
+    padding-left: 1.2em;
 }
 
 ol, pre, ul {
     margin: 1em 0 1em 0;
-}
-
-@media (max-width: 767px) {
-    body {
-        font-size: 113% !important;
-        line-height: 1.45;
-    }
 }
