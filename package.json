@@ -9,7 +9,7 @@
     "start": "start index.html",
     "edit": "emacs markdown.txt",
     "test": "npm run lint && npm run spec",
-    "lint": "jshint js/collapse.js js/figure.js js/punctuation.js js/title.js js/custom.js test/test.js && standard js/collapse.js js/figure.js js/punctuation.js js/title.js js/custom.js test/test.js && markdownlint markdown.txt",
+    "lint": "jshint js/collapse.js js/figure.js js/hanging.js js/punctuation.js js/title.js js/custom.js test/test.js && standard js/collapse.js js/figure.js js/hanging.js js/punctuation.js js/title.js js/custom.js test/test.js && markdownlint markdown.txt",
     "spec": "mocha-phantomjs test/test.html",
     "browser": "start test/test.html"
   },
