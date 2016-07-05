@@ -111,6 +111,22 @@ describe('punctuation.js', function () {
   })
 })
 
+describe('hanging.js', function () {
+  describe('addHangingPunctuation()', function () {
+    it('should detect opening double quotation marks', function () {
+      var div = $('<div><p>“Tsk, tsk,” said the Hatter, “what a mess you’ve made.”</p></div>')
+      assert.equal(div.addHangingPunctuation().prop('outerHTML'),
+                   '<div><p class="startsWithDoubleQuote">“Tsk, tsk,” said the Hatter, “what a mess you’ve made.”</p></div>')
+    })
+
+    it('should detect opening single quotation marks', function () {
+      var div = $('<div><p>‘Tsk, tsk,’ said the Hatter, ‘what a mess you’ve made.’</p></div>')
+      assert.equal(div.addHangingPunctuation().prop('outerHTML'),
+                   '<div><p class="startsWithSingleQuote">‘Tsk, tsk,’ said the Hatter, ‘what a mess you’ve made.’</p></div>')
+    })
+  })
+})
+
 describe('title.js', function () {
   describe('removeAria()', function () {
     it('should remove header anchor', function () {
