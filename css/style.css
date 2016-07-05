@@ -16,24 +16,14 @@ h6 code, h6 kbd, h6 samp, h6 tt {
 blockquote {
     border-left: 3px solid rgba(0, 0, 0, 0.8);
     font-size: 1em;
-    font-style: italic;
-    margin-left: -23px;
     padding-left: 20px;
     padding: 0px 20px;
 }
 
-blockquote blockquote {
-    margin-left: 0;
-}
-
-blockquote em, blockquote i {
-    font-style: normal;
-}
-
 body {
     color: rgba(0, 0, 0, 0.8) !important;
-    font-family: Charter, "Iowan Old Style", Iowan, "Iowan Web", Georgia, "Hoefler Text", Cambria, Constantia, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, Baskerville, serif !important;
-    font-size: 125% !important;
+    font-family: Georgia, Charter, "Iowan Old Style", Iowan, "Iowan Web", "Hoefler Text", Cambria, Constantia, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, Baskerville, serif !important;
+    font-size: 120% !important;
     line-height: 1.5;
     margin-bottom: 5%;
     margin-top: 5%;
@@ -74,34 +64,34 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 }
 
 h1 {
-    font-size: 2em; /* 40px */
+    font-size: 2em;
     padding-bottom: 0.5em;
 }
 
 h2 {
-    font-size: 1.5em; /* 30px */
+    font-size: 1.5em;
 }
 
 h3 {
     color: rgba(0, 0, 0, 0.44);
-    font-size: 1.3em; /* 26px */
+    font-size: 1.3em;
     font-weight: normal;
 }
 
 h4 {
-    font-size: 1em; /* 20px */
+    font-size: 1em;
     font-weight: normal;
 }
 
 h5 {
     color: rgba(0, 0, 0, 0.44);
-    font-size: 1em; /* 20px */
+    font-size: 1em;
     font-weight: normal;
 }
 
 h6 {
     color: rgba(0, 0, 0, 0.44);
-    font-size: 1em; /* 20px */
+    font-size: 1em;
     font-style: italic;
     font-weight: normal;
 }
@@ -174,13 +164,8 @@ ul > li:before {
 
 @media (max-width: 767px) {
     body {
-        font-size: 113% !important;
+        font-size: 110% !important;
         line-height: 1.45;
-    }
-
-    blockquote {
-        margin-left: -20px;
-        padding-left: 17px;
     }
 
     .container .header-anchor {
