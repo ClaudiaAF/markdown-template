@@ -134,6 +134,14 @@ describe('util.js', function () {
     })
   })
 
+  describe('fixAnchors()', function () {
+    it('should add title attribute to header anchor', function () {
+      var div = $('<div><h1><a aria-hidden="true" href="#">¶</a>Header</h1></div>')
+      div.fixAnchors().prop('outerHTML').should.equal(
+        '<div><h1><a title="Header" aria-hidden="true" href="#">¶</a>Header</h1></div>')
+    })
+  })
+
   describe('addTitle()', function () {
     it('should set title to first header', function () {
       var div = $('<div>' +
