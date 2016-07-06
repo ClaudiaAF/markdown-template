@@ -26,7 +26,9 @@
                  }
 
                  // animation style
-                 button.addClass('slide')
+                 if (opts.slide) {
+                   button.addClass('slide')
+                 }
                })
              })
     })
@@ -75,6 +77,7 @@
   // Default options
   $.fn.addCollapsibleSections.defaults = {
     show: '\u25b2', // black up-pointing triangle
-    hide: '\u25bc'  // black down-pointing triangle
+    hide: '\u25bc', // black down-pointing triangle
+    slide: true     // animation
   }
 }(jQuery))
