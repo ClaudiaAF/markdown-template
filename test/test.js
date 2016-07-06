@@ -40,13 +40,13 @@ describe('collapse.js', function () {
       div.addCollapsibleSections().prop('outerHTML').should.equal(
         '<div>' +
         '<h1>Header' +
-        '<span aria-hidden="true" class="collapse-button" title="Collapse">▼</span>' +
+        '<span aria-hidden="true" class="collapse-button slide" title="Collapse">▼</span>' +
         '</h1>' +
         '<div>' +
         '<p>Paragraph one</p>' +
         '<p>Paragraph two</p>' +
         '<h2>Subheader' +
-        '<span aria-hidden="true" class="collapse-button" title="Collapse">▼</span>' +
+        '<span aria-hidden="true" class="collapse-button slide" title="Collapse">▼</span>' +
         '</h2>' +
         '<div>' +
         '<p>Paragraph three</p>' +
