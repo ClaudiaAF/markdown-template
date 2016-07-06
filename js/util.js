@@ -8,6 +8,19 @@
     })
   }
 
+  $.fn.fixAnchors = function () {
+    return this.each(function () {
+      $(this).find('h1 a[aria-hidden="true"], h2 a[aria-hidden="true"], h3 a[aria-hidden="true"], h4 a[aria-hidden="true"], h5 a[aria-hidden="true"], h6 a[aria-hidden="true"]').each(function () {
+        var anchor = $(this)
+        if (!anchor.is('[title]')) {
+          var header = anchor.parent()
+          var title = header.removeAria().text().trim()
+          anchor.attr('title', title)
+        }
+      })
+    })
+  }
+
   $.fn.addTitle = function () {
     return this.each(function () {
       var title = $(this).find('title')

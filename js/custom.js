@@ -35,6 +35,7 @@ function process (markdown) {
   $('body').addPunctuation()
   $('body').addCollapsibleSections()
   $('html').addHangingPunctuation()
+  $('body').fixAnchors()
   $('html').addTitle()
 }
 
