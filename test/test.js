@@ -119,7 +119,7 @@ describe('hanging.js', function () {
   })
 })
 
-describe('title.js', function () {
+describe('util.js', function () {
   describe('removeAria()', function () {
     it('should remove header anchor', function () {
       var header = $('<h1><a aria-hidden="true" href="#">¶</a>Header</h1>')
