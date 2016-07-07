@@ -5,6 +5,7 @@ var anchor = window.markdownItAnchor
 var sub = window.markdownitSub
 var sup = window.markdownitSup
 var footnote = window.markdownitFootnote
+var mathjax = window.markdownitMathjax
 
 var md = window.markdownit({
   html: true,
@@ -23,6 +24,7 @@ var md = window.markdownit({
   .use(sub)
   .use(sup)
   .use(footnote)
+  .use(mathjax)
 
 function convert (markdown) {
   var html = md.render(markdown)
