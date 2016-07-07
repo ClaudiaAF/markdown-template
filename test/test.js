@@ -28,7 +28,7 @@ describe('collapse.js', function () {
   })
 
   describe('addCollapsibleSections()', function () {
-    it('should create button for each section', function () {
+    it('should add button to each header except h1', function () {
       var div = $('<div>' +
                   '<h1>Header</h1>' +
                   '<p>Paragraph one</p>' +
@@ -39,9 +39,7 @@ describe('collapse.js', function () {
                   '</div>')
       div.addCollapsibleSections().prop('outerHTML').should.equal(
         '<div>' +
-        '<h1>Header' +
-        '<span aria-hidden="true" class="collapse-button slide" title="Collapse">▼</span>' +
-        '</h1>' +
+        '<h1>Header</h1>' +
         '<div>' +
         '<p>Paragraph one</p>' +
         '<p>Paragraph two</p>' +

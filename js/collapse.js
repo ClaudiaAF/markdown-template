@@ -13,6 +13,11 @@
                  var header = $(this)
                  var section = $.fn.addCollapsibleSections.addSection(header)
 
+                 // skip top-level headers
+                 if ($.inArray(el, opts.include) < 0) {
+                   return
+                 }
+
                  // add button
                  var button = $.fn.addCollapsibleSections.button(opts.hide)
                  header.append(button)
@@ -76,6 +81,7 @@
 
   // Default options
   $.fn.addCollapsibleSections.defaults = {
+    include: ['h2', 'h3', 'h4', 'h5', 'h6'], // skip h1
     show: '\u25b2', // black up-pointing triangle
     hide: '\u25bc', // black down-pointing triangle
     slide: true     // animation
