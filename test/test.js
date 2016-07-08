@@ -22,7 +22,7 @@ describe('collapse.js', function () {
 
   describe('button()', function () {
     it('should create a button as specified', function () {
-      $.fn.addCollapsibleSections.button('\u25bc').prop('outerHTML').should.equal(
+      $.fn.addCollapsibleSections.button('Collapse', '\u25bc').prop('outerHTML').should.equal(
         '<span aria-hidden="true" class="collapse-button" title="Collapse">▼</span>')
     })
   })

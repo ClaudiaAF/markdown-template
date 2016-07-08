@@ -19,11 +19,11 @@
                  }
 
                  // add button
-                 var button = $.fn.addCollapsibleSections.button(opts.hide)
+                 var button = $.fn.addCollapsibleSections.button(opts.collapse, opts.hide)
                  header.append(button)
 
                  // add click handler
-                 button.click($.fn.addCollapsibleSections.clickHandler(button, header, section, opts.show, opts.hide))
+                 button.click($.fn.addCollapsibleSections.clickHandler(button, header, section, opts.collapse, opts.expand, opts.show, opts.hide))
 
                  // allow pre-collapsed sections
                  if (header.hasClass('collapsed')) {
@@ -54,20 +54,20 @@
   }
 
   // button
-  $.fn.addCollapsibleSections.button = function (hide) {
-    return $('<span aria-hidden="true" class="collapse-button" title="Collapse">' + hide + '</span>')
+  $.fn.addCollapsibleSections.button = function (collapse, hide) {
+    return $('<span aria-hidden="true" class="collapse-button" title="' + collapse + '">' + hide + '</span>')
   }
 
   // click handler
-  $.fn.addCollapsibleSections.clickHandler = function (button, header, section, show, hide) {
+  $.fn.addCollapsibleSections.clickHandler = function (button, header, section, collapse, expand, show, hide) {
     return function () {
       if (button.text() === show) {
         button.text(hide)
-        button.attr('title', 'Collapse')
+        button.attr('title', collapse)
         header.removeClass('collapsed')
       } else {
         button.text(show)
-        button.attr('title', 'Expand')
+        button.attr('title', expand)
         header.addClass('collapsed')
       }
       if (button.hasClass('slide')) {
@@ -82,6 +82,8 @@
   // Default options
   $.fn.addCollapsibleSections.defaults = {
     include: ['h2', 'h3', 'h4', 'h5', 'h6'], // skip h1
+    collapse: 'Collapse', // collapse title
+    expand: 'Expand', // expand title
     show: '\u25b2', // black up-pointing triangle
     hide: '\u25bc', // black down-pointing triangle
     slide: true     // animation
