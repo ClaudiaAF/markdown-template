@@ -32,7 +32,7 @@ blockquote em, blockquote i {
 
 body {
     color: rgba(0, 0, 0, 0.8) !important;
-    font-family: Charter, "Iowan Old Style", Iowan, "Iowan Web", Georgia, "Hoefler Text", Cambria, Constantia, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, Baskerville, serif !important;
+    font-family: Charter, "Bitstream Charter", "ITC Charter", "Charis SIL", "Iowan Old Style", Iowan, "Iowan Web", Georgia, "Hoefler Text", Cambria, Constantia, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, Baskerville, serif !important;
     font-size: 125% !important;
     line-height: 1.5;
     margin-bottom: 5%;
