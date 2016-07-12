@@ -1,4 +1,4 @@
-/* global $ */
+/* global $, MathJax */
 var hljs = window.hljs
 var attr = window.markdownItAttrs
 var anchor = window.markdownItAnchor
@@ -26,13 +26,28 @@ var md = window.markdownit({
   .use(footnote)
   .use(mathjax)
 
-function convert (markdown) {
-  var html = md.render(markdown)
-  $('.container').append(html)
+function load (iframe) {
+  var deferred = $.Deferred()
+  iframe.hide()
+  iframe.on('load', function () {
+    var contents = iframe.contents().text()
+    var div = $('<div>')
+    div.text(contents)
+    div.insertBefore(iframe)
+    iframe.remove()
+    deferred.resolve(div)
+  })
+  return deferred.promise()
 }
 
-function process (markdown) {
-  convert(markdown)
+function convert (container) {
+  var markdown = container.text()
+  var html = md.render(markdown)
+  container.html(html)
+  return container
+}
+
+function process (body) {
   $('body').addFigures()
   $('body').addPunctuation()
   $('body').addCollapsibleSections()
@@ -40,14 +55,9 @@ function process (markdown) {
   $('body').fixAnchors()
   $('body').fixFootnotes()
   $('html').addTitle()
+  MathJax.Hub.Queue(['Typeset', MathJax.Hub])
 }
 
 $(function () {
-  var iframe = $('iframe')
-  iframe.hide()
-  iframe.on('load', function () {
-    var markdown = $(this).contents().text()
-    process(markdown)
-    $(this).remove()
-  })
+  load($('iframe')).then(convert).then(process)
 })
