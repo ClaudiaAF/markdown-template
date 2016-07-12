@@ -1,12 +1,6 @@
 General Parser Combinators in Racket
 ====================================
 
-
-This article explains how to implement a general parser combinator
-framework which handles left-recursive and ambiguous grammars. It is
-
-* * * * *
-
 This article explains how to implement a general parser combinator
 framework which handles left-recursive and ambiguous grammars. It is
 implemented in [Racket](http://www.racket-lang.org/), a dialect of
