@@ -17,10 +17,10 @@ Miscellaneous
 The example text is the article
 [General Parser Combinators in Racket](https://github.com/epsil/gll).
 
-Reading the contents of `markdown.txt` by using a hidden `iframe`
-works well in Firefox and Internet Explorer, but not Chrome.
-Chrome sets limitations on local file access and requires both
-`index.html` and `markdown.txt` to be hosted on a server, for example
+Locally, reading the contents of `markdown.txt` by using a hidden
+`iframe` works well in Firefox and Internet Explorer, but not Chrome.
+Chrome sets limitations on file access and requires both `index.html`
+and `markdown.txt` to be hosted on a server, for example
 [http-server](https://www.npmjs.com/package/http-server):
 
     $ npm install -g http-server
