@@ -38,6 +38,7 @@ function process (markdown) {
   $('body').addCollapsibleSections()
   $('html').addHangingPunctuation()
   $('body').fixAnchors()
+  $('body').fixFootnotes()
   $('html').addTitle()
 }
 

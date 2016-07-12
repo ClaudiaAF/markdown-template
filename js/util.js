@@ -21,6 +21,19 @@
     })
   }
 
+  $.fn.fixFootnotes = function () {
+    return this.each(function () {
+      var body = $(this)
+      body.find('.footnote-ref a').each(function () {
+        var link = $(this)
+        var id = link.attr('href')
+        var note = body.find(id)
+        var text = note.text().replace(/\s+\u21a9\s+$/, '')
+        link.attr('title', text)
+      })
+    })
+  }
+
   $.fn.addTitle = function () {
     return this.each(function () {
       var title = $(this).find('title')
