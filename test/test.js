@@ -140,6 +140,32 @@ describe('util.js', function () {
     })
   })
 
+  describe('fixFootnotes()', function () {
+    it('should add title attribute to footnote link', function () {
+      var div = $('<div>' +
+                  '<p>This is a test.<sup class="footnote-ref"><a id="fnref1" href="#fn1">[1]</a></sup></p>' +
+                  '<hr class="footnotes-sep">' +
+                  '<section class="footnotes">' +
+                  '<ol class="footnotes-list">' +
+                  '<li class="footnote-item" id="fn1"><p>This is a footnote. <a class="footnote-backref" href="#fnref1">↩</a></p>' +
+                  '</li>' +
+                  '</ol>' +
+                  '</section>' +
+                  '</div>')
+      div.fixFootnotes().prop('outerHTML').should.equal(
+        '<div>' +
+        '<p>This is a test.<sup class="footnote-ref"><a title="This is a footnote." id="fnref1" href="#fn1">[1]</a></sup></p>' +
+        '<hr class="footnotes-sep">' +
+        '<section class="footnotes">' +
+        '<ol class="footnotes-list">' +
+        '<li class="footnote-item" id="fn1"><p>This is a footnote. <a class="footnote-backref" href="#fnref1">↩</a></p>' +
+        '</li>' +
+        '</ol>' +
+        '</section>' +
+        '</div>')
+    })
+  })
+
   describe('addTitle()', function () {
     it('should set title to first header', function () {
       var div = $('<div>' +
