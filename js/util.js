@@ -40,7 +40,7 @@
       if (title.length === 0) {
         title = $('title')
       }
-      var header = $(this).find('h1, h2, h3, h4, h5, h6').first()
+      var header = $(this).find('h1, h2, h3, h4, h5, h6, strong, b, em, i, p').first()
       if (header.length > 0) {
         var txt = header.removeAria().text().trim()
         title.html(txt)
