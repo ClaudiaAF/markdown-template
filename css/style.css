@@ -3,6 +3,9 @@ a:hover, a:focus {
 }
 
 a code, a kbd, a samp, a tt,
+b code, b kbd, b samp, b tt,
+strong code, strong kbd, strong samp, strong tt,
+table code, table kbd, table samp, table tt,
 h1 code, h1 kbd, h1 samp, h1 tt,
 h2 code, h2 kbd, h2 samp, h2 tt,
 h3 code, h3 kbd, h3 samp, h3 tt,
@@ -113,6 +116,10 @@ hr:before {
 
 html {
     font-size: initial !important;
+}
+
+img {
+    max-width: 100%;
 }
 
 p {
