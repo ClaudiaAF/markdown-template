@@ -28,7 +28,7 @@
         var link = $(this)
         var id = link.attr('href')
         var note = body.find(id)
-        var text = note.text().replace(/\s*\u21a9\s*$/, '')
+        var text = note.text().replace(/(\s*\u21a9\s*)+$/, '')
         link.attr('title', text)
       })
     })
