@@ -8,6 +8,11 @@ h1:hover .collapse-button, h2:hover .collapse-button, h3:hover .collapse-button,
     color: #cccccc;
     text-decoration: none;
     transition: all 0.5s;
+    text-align: right;
+}
+
+.collapsed .collapse-button {
+    width: 100%;
 }
 
 .collapsed {
