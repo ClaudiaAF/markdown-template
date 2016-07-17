@@ -12,6 +12,7 @@
             .replace(/"/g, '\u201d') // ending "
             // .replace(/([^0-9])"/g,'$1\u201d') // remaining " at end of word
             .replace(/([0-9])('|\u2019)([0-9])/g, '$1\u2032$3') // prime
+            .replace(/([0-9]+)(\s*)x(\s*)([0-9]+)/g, '$1$2\u00d7$3$4') // times
             .replace(/([-([«\u201c\s]|^)('|\u2019)(\S)/g, '$1\u2018$3') // beginning '
             .replace(/'/ig, '\u2019') // ending '
             // .replace(/((\u2018[^']*)|[a-z])'([^0-9]|$)/ig, '$1\u2019$3') // conjunction's possession
@@ -38,8 +39,8 @@
             .replace(/'/g, '\u2032') // prime
             .replace(/<3/g, '\u2764') // heart
             .replace(/!! :\)/g, '\u203c\u032e') // smiley
-            .replace(/:\)/g, '\u263a') // smiley
-            .replace(/:\(/g, '\u2639') // frowning smiley
+            .replace(/:-?\)/g, '\u263a') // smiley
+            .replace(/:-?\(/g, '\u2639') // frowning smiley
         }
         if (node.hasChildNodes() && (node.firstChild.nodeName !== 'CODE' ||
                                      node.firstChild.nodeName !== 'PRE' ||

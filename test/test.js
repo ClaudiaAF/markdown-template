@@ -23,7 +23,7 @@ describe('collapse.js', function () {
   describe('button()', function () {
     it('should create a button as specified', function () {
       $.fn.addCollapsibleSections.button('Collapse', '\u25bc').prop('outerHTML').should.equal(
-        '<span aria-hidden="true" class="collapse-button" title="Collapse">▼</span>')
+        '<span aria-hidden="true" class="collapse-button" title="Collapse"></span>')
     })
   })
 
@@ -44,7 +44,7 @@ describe('collapse.js', function () {
         '<p>Paragraph one</p>' +
         '<p>Paragraph two</p>' +
         '<h2>Subheader' +
-        '<span aria-hidden="true" class="collapse-button slide" title="Collapse">▼</span>' +
+        '<span aria-hidden="true" class="collapse-button slide" title="Collapse"></span>' +
         '</h2>' +
         '<div>' +
         '<p>Paragraph three</p>' +
@@ -70,6 +70,40 @@ describe('figure.js', function () {
         '<img alt="Caption text" class="right" src="image.png" width="200">' +
         '<p class="caption">Caption text</p>' +
         '</div>' +
+        '</div>')
+    })
+
+    it('should handle multiple images within a paragraph', function () {
+      var div = $('<div>' +
+                  '<p>' +
+                  '<img alt="Caption text 1" class="right" src="image1.png" width="200">' +
+                  '<img alt="Caption text 2" class="right" src="image2.png" width="200">' +
+                  '</p>' +
+                  '</div>')
+      div.addFigures().prop('outerHTML').should.equal(
+        '<div>' +
+        '<div style="width: 209px;" class="figure right">' +
+        '<img alt="Caption text 1" class="right" src="image1.png" width="200">' +
+        '<p class="caption">Caption text 1</p>' +
+        '</div>' +
+        '<div style="width: 209px;" class="figure right">' +
+        '<img alt="Caption text 2" class="right" src="image2.png" width="200">' +
+        '<p class="caption">Caption text 2</p>' +
+        '</div>' +
+        '</div>')
+    })
+
+    it('should ignore captionless images', function () {
+      var div = $('<div>' +
+                  '<p>' +
+                  '<img alt="" src="image.png">' +
+                  '</p>' +
+                  '</div>')
+      div.addFigures().prop('outerHTML').should.equal(
+        '<div>' +
+        '<p>' +
+        '<img alt="" src="image.png">' +
+        '</p>' +
         '</div>')
     })
   })
@@ -117,6 +151,38 @@ describe('hanging.js', function () {
   })
 })
 
+describe('github.js', function () {
+  describe('addForkButton.resource()', function () {
+    it('should extract resource path', function () {
+      $.fn.addForkButton.resource('http://www.example.org/foo/').should.equal('/foo/')
+    })
+  })
+
+  describe('addForkButton.path()', function () {
+    it('should extract relative path', function () {
+      $.fn.addForkButton.path('http://www.example.org/foo/').should.equal('foo')
+    })
+  })
+
+  describe('addForkButton.url()', function () {
+    it('should simplify the address for root', function () {
+      $.fn.addForkButton.url('http://epsil.github.io/').should.equal('https://github.com/epsil/epsil.github.io/')
+    })
+
+    it('should point to the Markdown source', function () {
+      $.fn.addForkButton.url('http://epsil.github.io/2011/05/29/').should.equal('https://github.com/epsil/epsil.github.io/tree/master/2011/05/29/index.txt')
+    })
+
+    it('should ignore trailing slash', function () {
+      $.fn.addForkButton.url('http://epsil.github.io/2011/05/29').should.equal('https://github.com/epsil/epsil.github.io/tree/master/2011/05/29/index.txt')
+    })
+
+    it('should ignore file:/// links', function () {
+      $.fn.addForkButton.url('file:///test').should.equal('file:///test')
+    })
+  })
+})
+
 describe('util.js', function () {
   describe('removeAria()', function () {
     it('should remove header anchor', function () {
@@ -134,9 +200,15 @@ describe('util.js', function () {
 
   describe('fixAnchors()', function () {
     it('should add title attribute to header anchor', function () {
+      var div = $('<div><h1><a aria-hidden="true" href="#"></a>Header</h1></div>')
+      div.fixAnchors().prop('outerHTML').should.equal(
+        '<div><h1><a title="Header" aria-hidden="true" href="#"></a>Header</h1></div>')
+    })
+
+    it('should remove anchor glyph', function () {
       var div = $('<div><h1><a aria-hidden="true" href="#">¶</a>Header</h1></div>')
       div.fixAnchors().prop('outerHTML').should.equal(
-        '<div><h1><a title="Header" aria-hidden="true" href="#">¶</a>Header</h1></div>')
+        '<div><h1><a title="Header" aria-hidden="true" href="#"></a>Header</h1></div>')
     })
   })
 
@@ -159,6 +231,30 @@ describe('util.js', function () {
         '<section class="footnotes">' +
         '<ol class="footnotes-list">' +
         '<li class="footnote-item" id="fn1"><p>This is a footnote. <a class="footnote-backref" href="#fnref1">↩</a></p>' +
+        '</li>' +
+        '</ol>' +
+        '</section>' +
+        '</div>')
+    })
+
+    it('should handle multiple usages of the same footnote', function () {
+      var div = $('<div>' +
+                  '<p>This is a test.<sup class="footnote-ref"><a id="fnref1" href="#fn1">[1]</a></sup> Same footnote again.<sup class="footnote-ref"><a id="fnref2" href="#fn1">[1]</a></sup></p>' +
+                  '<hr class="footnotes-sep">' +
+                  '<section class="footnotes">' +
+                  '<ol class="footnotes-list">' +
+                  '<li class="footnote-item" id="fn1"><p>This is a footnote. <a class="footnote-backref" href="#fnref1">↩</a> <a class="footnote-backref" href="#fnref2">↩</a></p>' +
+                  '</li>' +
+                  '</ol>' +
+                  '</section>' +
+                  '</div>')
+      div.fixFootnotes().prop('outerHTML').should.equal(
+        '<div>' +
+        '<p>This is a test.<sup class="footnote-ref"><a title="This is a footnote." id="fnref1" href="#fn1">[1]</a></sup> Same footnote again.<sup class="footnote-ref"><a title="This is a footnote." id="fnref2" href="#fn1">[1]</a></sup></p>' +
+        '<hr class="footnotes-sep">' +
+        '<section class="footnotes">' +
+        '<ol class="footnotes-list">' +
+        '<li class="footnote-item" id="fn1"><p>This is a footnote. <a class="footnote-backref" href="#fnref1">↩</a> <a class="footnote-backref" href="#fnref2">↩</a></p>' +
         '</li>' +
         '</ol>' +
         '</section>' +

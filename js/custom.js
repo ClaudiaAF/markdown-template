@@ -26,7 +26,7 @@ var md = window.markdownit({
   .use(footnote)
   .use(mathjax)
 
-function load (iframe) {
+function loadIframe (iframe) {
   var deferred = $.Deferred()
   iframe.hide()
   iframe.on('load', function () {
@@ -35,6 +35,24 @@ function load (iframe) {
     div.text(contents)
     div.insertBefore(iframe)
     iframe.remove()
+    deferred.resolve(div)
+  })
+  return deferred.promise()
+}
+
+/* eslint-disable no-unused-vars */
+function loadAjax (iframe) {
+  var deferred = $.Deferred()
+  iframe.hide()
+  var src = iframe.attr('src')
+  var div = $('<div>')
+  div.insertBefore(iframe)
+  iframe.remove()
+  $.ajax({
+    url: src,
+    dataType: 'text'
+  }).done(function (data) {
+    div.text(data)
     deferred.resolve(div)
   })
   return deferred.promise()
@@ -50,14 +68,16 @@ function convert (container) {
 function process (body) {
   $('body').addFigures()
   $('body').addPunctuation()
-  $('body').addCollapsibleSections()
+  $('html').addCollapsibleSections()
   $('html').addHangingPunctuation()
   $('body').fixAnchors()
   $('body').fixFootnotes()
+  $('body').removeEmptyTableHeaders()
   $('html').addTitle()
+  $('html').addForkButton()
   MathJax.Hub.Queue(['Typeset', MathJax.Hub])
 }
 
 $(function () {
-  load($('iframe')).then(convert).then(process)
+  loadIframe($('iframe')).then(convert).then(process)
 })
