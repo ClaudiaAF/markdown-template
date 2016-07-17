@@ -11,11 +11,8 @@ Edit `markdown.txt` in a text editor.
 
 Open `index.html` in a browser to see the result.
 
-Miscellaneous
--------------
-
-The example text is the article
-[General Parser Combinators in Racket](https://github.com/epsil/gll).
+Implementation
+--------------
 
 Locally, reading the contents of `markdown.txt` by using a hidden
 `iframe` works well in Firefox and Internet Explorer, but not Chrome.
@@ -28,11 +25,35 @@ and `markdown.txt` to be hosted on a server, for example
 
 This will host the files on <http://localhost/>.
 
-Tested methods:
-[iframe](http://stackoverflow.com/questions/1796619/how-to-access-the-content-of-an-iframe-with-jquery),
-~~[$.load()](http://api.jquery.com/load/)~~,
-~~[$.get()](https://api.jquery.com/jquery.get/)~~,
-~~[XMLHttpRequest](http://stackoverflow.com/questions/14446447/javascript-read-local-text-file)~~.
+The following methods are available:
+
+### `loadIframe()` (default)
+
+-   Loads the
+    [.contents()](http://stackoverflow.com/questions/1796619/how-to-access-the-content-of-an-iframe-with-jquery)
+    of a hidden `iframe`
+-   Requires the loaded file to have a file extension of `.txt`
+-   When hosted on a web server, it works in Firefox, Chrome, Safari
+    and Internet Explorer
+-   When opened locally, it works in Firefox and Internet Explorer
+
+### `loadAjax()`
+
+-   Loads the file by means of an
+    [XMLHttpRequest](http://stackoverflow.com/questions/14446447/javascript-read-local-text-file)
+-   The file can have any extension (e.g., `.md`)
+-   When hosted on a web server, it works in Firefox, Chrome, Safari
+    and Internet Explorer
+-   When opened locally, it works in Firefox
+
+Similar methods: ~~[$.load()](http://api.jquery.com/load/)~~,
+~~[$.get()](https://api.jquery.com/jquery.get/)~~.
+
+Miscellaneous
+-------------
+
+The example text is the article
+[General Parser Combinators in Racket](https://github.com/epsil/gll).
 
 License
 -------
