@@ -25,7 +25,7 @@ and `markdown.txt` to be hosted on a server, for example
 
 This will host the files on <http://localhost/>.
 
-The following methods are available:
+The following implementations are available:
 
 ### `loadIframe()` (default)
 
@@ -39,21 +39,21 @@ The following methods are available:
 
 ### `loadAjax()`
 
--   Loads the file by means of an
-    [XMLHttpRequest](http://stackoverflow.com/questions/14446447/javascript-read-local-text-file)
+-   Loads the file by means of [$.get()](https://api.jquery.com/jquery.get/)
 -   The file can have any extension (e.g., `.md`)
+-   However, `.txt` is still recommended since Firefox may store partial files in its download directory
 -   When hosted on a web server, it works in Firefox, Chrome, Safari
     and Internet Explorer
 -   When opened locally, it works in Firefox
 
 Similar methods: ~~[$.load()](http://api.jquery.com/load/)~~,
-~~[$.get()](https://api.jquery.com/jquery.get/)~~.
+    ~~[XMLHttpRequest](http://stackoverflow.com/questions/14446447/javascript-read-local-text-file)~~.
 
 Miscellaneous
 -------------
 
 The example text is the article
-[General Parser Combinators in Racket](https://github.com/epsil/gll).
+[General Parser Combinators in Racket](https://epsil.github.io/gll/).
 
 License
 -------

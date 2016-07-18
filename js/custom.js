@@ -48,13 +48,10 @@ function loadAjax (iframe) {
   var div = $('<div>')
   div.insertBefore(iframe)
   iframe.remove()
-  $.ajax({
-    url: src,
-    dataType: 'text'
-  }).done(function (data) {
+  $.get(src, function (data) {
     div.text(data)
     deferred.resolve(div)
-  })
+  }, 'text')
   return deferred.promise()
 }
 
