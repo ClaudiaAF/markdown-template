@@ -39,9 +39,9 @@ The following implementations are available:
 
 ### `loadAjax()`
 
--   Loads the file by means of [$.get()](https://api.jquery.com/jquery.get/)
+-   Loads the file with [$.get()](https://api.jquery.com/jquery.get/)
 -   The file can have any extension (e.g., `.md`)
--   However, `.txt` is still recommended since Firefox may store partial files in its download directory
+-   However, `.txt` is still recommended because otherwise, Firefox tends to store partial files in its download directory
 -   When hosted on a web server, it works in Firefox, Chrome, Safari
     and Internet Explorer
 -   When opened locally, it works in Firefox
