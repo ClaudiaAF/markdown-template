@@ -14,16 +14,18 @@ Open `index.html` in a browser to see the result.
 Implementation
 --------------
 
-Locally, reading the contents of `markdown.txt` by using a hidden
-`iframe` works well in Firefox and Internet Explorer, but not Chrome.
-Chrome sets limitations on file access and requires both `index.html`
-and `markdown.txt` to be hosted on a server, for example
+The code reads the contents of `markdown.txt` by using a hidden
+`iframe`. Locally, this works very well in Firefox. Chrome, however,
+imposes restrictions on local file access. A workaround is to host the
+files on a local HTTP server, for example
 [http-server](https://www.npmjs.com/package/http-server):
 
     $ npm install -g http-server
-    $ http-server -p 80
+    $ http-server -a localhost -p 80
 
-This will host the files on <http://localhost/>.
+Run these commands in the directory containing `index.html` and
+`markdown.txt`. The template is now available from
+<http://localhost/>.
 
 The following implementations are available:
 
