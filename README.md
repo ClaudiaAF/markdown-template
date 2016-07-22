@@ -35,18 +35,21 @@ The following implementations are available:
     [.contents()](http://stackoverflow.com/questions/1796619/how-to-access-the-content-of-an-iframe-with-jquery)
     of a hidden `iframe`
 -   Requires the loaded file to have a file extension of `.txt`
--   When hosted on a web server, it works in Firefox, Chrome, Safari
-    and Internet Explorer
--   When opened locally, it works in Firefox and Internet Explorer
+-   Locally:
+    -   Works in Firefox and Internet Explorer
+-   On a server:
+    -   Works in Firefox, Chrome, Safari and Internet Explorer
 
 ### `loadAjax()`
 
 -   Loads the file with [$.get()](https://api.jquery.com/jquery.get/)
 -   The file can have any extension (e.g., `.md`)
--   However, `.txt` is still recommended because otherwise, Firefox tends to store partial files in its download directory
--   When hosted on a web server, it works in Firefox, Chrome, Safari
-    and Internet Explorer
--   When opened locally, it works in Firefox
+-   Locally:
+    -   Works in Firefox
+    -   The file extension `.txt` is recommended because otherwise,
+        Firefox tends to store partial files in its download directory
+-   On a server:
+    -   Works in Firefox, Chrome, Safari and Internet Explorer
 
 Similar methods: ~~[$.load()](http://api.jquery.com/load/)~~,
     ~~[XMLHttpRequest](http://stackoverflow.com/questions/14446447/javascript-read-local-text-file)~~.
