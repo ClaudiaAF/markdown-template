@@ -6,15 +6,15 @@
     <meta http-equiv="Content-Style-Type" content="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="favicon.ico" rel="icon" type="image/x-icon">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/anchor.css" rel="stylesheet">
-    <link href="css/collapse.css" rel="stylesheet">
-    <link href="css/figure.css" rel="stylesheet">
-    <link href="css/hanging.css" rel="stylesheet">
-    <link href="css/highlight.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" title="Georgia">
-    <link href="css/charter.css" rel="alternate stylesheet" title="Charter">
-    <link href="css/template.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/anchor.css" rel="stylesheet" type="text/css">
+    <link href="css/collapse.css" rel="stylesheet" type="text/css">
+    <link href="css/figure.css" rel="stylesheet" type="text/css">
+    <link href="css/hanging.css" rel="stylesheet" type="text/css">
+    <link href="css/highlight.css" rel="stylesheet" type="text/css">
+    <link href="css/template.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" title="Georgia">
+    <link href="css/charter.css" rel="alternate stylesheet" type="text/css" title="Charter">
     <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
@@ -33,62 +33,53 @@
     <script src="js/highlight.js"></script>
     <script src="js/custom.js"></script>
     <script>
-      function changeStylesheet (stylesheet) {
+      function changeStylesheet (title) {
+        // disable stylesheets
         $('link[title]').each(function () {
           var link = $(this)
           var title = link.attr('title')
-          if (title === stylesheet) {
-            link.attr('rel', 'stylesheet')
-          } else {
-            link.attr('rel', 'alternate stylesheet')
-          }
-          var copy = link.clone()
-          link.remove()
-          $('head').append(copy)
-          link = copy
-          link.attr('href', link.attr('href'))
+          link.prop('disabled', true)
+          link.attr('rel', 'alternate stylesheet')
         })
+
+        // enable stylesheet
+        var link = $('link[title=' + title + ']')
+        link.prop('disabled', false)
+        link.attr('rel', 'stylesheet')
+
         return false
       }
+
+      function stylesheetSwitcher () {
+        var menu = $('<li class="dropdown">' +
+                     '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Font <span class="caret"></span></a>' +
+                     '</li>')
+        var ul = $('<ul class="dropdown-menu"></ul>')
+        $('link[title]').each(function () {
+          var title = $(this).attr('title')
+          var a = $('<a href="#">' + title + '</a>')
+          var li = a.wrap('<li>').parent()
+          a.click(function () {
+            changeStylesheet(title)
+          })
+          ul.append(li)
+        })
+        menu.append(ul)
+        return menu
+      }
+
+      $(function () {
+        $('.navbar-nav').append(stylesheetSwitcher())
+      })
     </script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
-
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stylesheet <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#" onclick="changeStylesheet('Charter');">Charter</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#" onclick="changeStylesheet('Georgia');">Georgia</a></li>
-              </ul>
-            </li>
-          </ul>
+        <ul class="nav navbar-nav">
+        </ul>
       </div>
     </nav>
-
-
-
-    <!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
-    <!--   <div class="container-fluid"> -->
-    <!--     <div class="dropdown"> -->
-    <!--       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
-    <!--         Dropdown -->
-    <!--         <span class="caret"></span> -->
-    <!--       </button> -->
-    <!--       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"> -->
-    <!--         <li><a href="#">Action</a></li> -->
-    <!--         <li><a href="#">Another action</a></li> -->
-    <!--         <li><a href="#">Something else here</a></li> -->
-    <!--         <li role="separator" class="divider"></li> -->
-    <!--         <li><a href="#">Separated link</a></li> -->
-    <!--       </ul> -->
-    <!--     </div> -->
-    <!--   </div> -->
-    <!-- </nav> -->
-
     <div class="container">
       <iframe src="markdown.txt"></iframe>
     </div>
