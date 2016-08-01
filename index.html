@@ -2,9 +2,9 @@
 <html>
   <head>
     <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="favicon.ico" rel="icon" type="image/x-icon">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/anchor.css" rel="stylesheet">
@@ -17,6 +17,7 @@
     <link href="css/template.css" rel="stylesheet">
     <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script src="js/markdown-it.js"></script>
     <script src="js/markdown-it-attrs.js"></script>
     <script src="js/markdown-it-anchor.js"></script>
@@ -31,8 +32,63 @@
     <script src="js/hanging.js"></script>
     <script src="js/highlight.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+      function changeStylesheet (stylesheet) {
+        $('link[title]').each(function () {
+          var link = $(this)
+          var title = link.attr('title')
+          if (title === stylesheet) {
+            link.attr('rel', 'stylesheet')
+          } else {
+            link.attr('rel', 'alternate stylesheet')
+          }
+          var copy = link.clone()
+          link.remove()
+          $('head').append(copy)
+          link = copy
+          link.attr('href', link.attr('href'))
+        })
+        return false
+      }
+    </script>
   </head>
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stylesheet <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" onclick="changeStylesheet('Charter');">Charter</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#" onclick="changeStylesheet('Georgia');">Georgia</a></li>
+              </ul>
+            </li>
+          </ul>
+      </div>
+    </nav>
+
+
+
+    <!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
+    <!--   <div class="container-fluid"> -->
+    <!--     <div class="dropdown"> -->
+    <!--       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> -->
+    <!--         Dropdown -->
+    <!--         <span class="caret"></span> -->
+    <!--       </button> -->
+    <!--       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"> -->
+    <!--         <li><a href="#">Action</a></li> -->
+    <!--         <li><a href="#">Another action</a></li> -->
+    <!--         <li><a href="#">Something else here</a></li> -->
+    <!--         <li role="separator" class="divider"></li> -->
+    <!--         <li><a href="#">Separated link</a></li> -->
+    <!--       </ul> -->
+    <!--     </div> -->
+    <!--   </div> -->
+    <!-- </nav> -->
+
     <div class="container">
       <iframe src="markdown.txt"></iframe>
     </div>
