@@ -1,0 +1,173 @@
+a {
+    color: #23527c;
+}
+
+body {
+    color: rgba(0, 0, 0, 0.8) !important;
+    font-family: Cardo, "Adobe Garamond Pro", "Garamond Premier Pro", "ITC Garamond Std", Garamond, Baskerville, "Baskerville Old Face", "Crimson Text", Crimson, "Iowan Old Style", Iowan, "Iowan Web", Georgia, Charter, "Hoefler Text", "Calisto MT", Constantia, Andalus, Centaur, Cambria, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, Baskerville, serif !important;
+    font-size: 110% !important;
+    line-height: 1.4;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    text-rendering: optimizelegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body > .container {
+    max-width: 740px;
+    padding: 0px 20px 0 20px;
+}
+
+blockquote {
+    border: none;
+    font-size: 1em;
+    font-style: italic;
+    padding: 0 3em;
+}
+
+blockquote em, blockquote i {
+    font-style: normal;
+}
+
+code, kbd, samp, tt {
+    padding: 0;
+    white-space: nowrap;
+}
+
+code, pre {
+    background-color: inherit;
+    border-radius: 0;
+    border: none;
+    color: inherit;
+    font-family: Consolas, "Consolas Web", Menlo, Monaco, "Liberation Mono", Courier, monospace !important;
+    font-size: 0.8em;
+    -moz-osx-font-smoothing: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.6;
+    margin: 1em 0 15px;
+    padding-right: 1em;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+h1 a:link, h2 a:link, h3 a:link, h4 a:link, h5 a:link, h6 a:link,
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+    color: inherit;
+}
+
+h1, h1.collapsed {
+    border-bottom: 1px solid #000;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding-bottom: 0.5em;
+}
+
+h2, h2.collapsed {
+    font-size: 1em;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    letter-spacing: 0.2em;
+}
+
+h3, h3.collapsed {
+    font-size: 1em;
+    font-style: italic;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+h5 {
+    color: rgba(0, 0, 0, 0.44);
+    font-size: 1em;
+    font-weight: normal;
+}
+
+h6 {
+    color: rgba(0, 0, 0, 0.44);
+    font-size: 1em;
+    font-style: italic;
+    font-weight: normal;
+}
+
+hr {
+    border: none;
+    padding: 1em 0 1em 0;
+    text-align: center;
+}
+
+hr:before {
+    color: rgba(0, 0, 0, 0.6);
+    content: "...";
+    letter-spacing: 0.6em;
+    position: relative;
+    text-align: center;
+    top: -1em;
+}
+
+html {
+    font-size: initial !important;
+}
+
+p {
+    margin: 0;
+    text-indent: 0;
+}
+
+p + p {
+    text-indent: 1.4em;
+}
+
+pre {
+    padding: 0 0 0 2.8em;
+}
+
+pre code {
+    font-size: 1em !important;
+}
+
+table {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    word-break: keep-all;
+}
+
+table th {
+    font-weight: bold;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 6px 13px;
+}
+
+table tr {
+    background-color: #fff;
+    border-top: 1px solid #000;
+}
+
+table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+}
+
+ol, ul {
+    padding-left: 1.4em;
+}
+
+ol, pre, ul {
+    margin: 1em 0 1em 0;
+}
+
+@media (max-width: 767px) {
+    body {
+        font-size: 113% !important;
+        line-height: 1.45;
+    }
+}
