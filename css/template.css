@@ -1,3 +1,7 @@
 iframe {
     display: none;
 }
+.dropdown-menu {
+    max-height: 500px;
+    overflow-y: auto;
+}
