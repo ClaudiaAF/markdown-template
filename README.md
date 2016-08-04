@@ -7,25 +7,24 @@ Markdown template
 Usage
 -----
 
-Edit `markdown.txt` in a text editor.
+Edit `index.txt` in a text editor.
 
 Open `index.html` in a browser to see the result.
 
 Implementation
 --------------
 
-The code reads the contents of `markdown.txt` by using a hidden
-`iframe`. Locally, this works very well in Firefox. Chrome, however,
-imposes restrictions on local file access. A workaround is to host the
-files on a local HTTP server, for example
+The code reads the contents of `index.txt` by using a hidden `iframe`.
+Locally, this works very well in Firefox. Chrome, however, imposes
+restrictions on local file access. A workaround is to host the files
+on a local HTTP server, for example
 [http-server](https://www.npmjs.com/package/http-server):
 
     $ npm install -g http-server
     $ http-server -a localhost -p 80
 
 Run these commands in the directory containing `index.html` and
-`markdown.txt`. The template is now available from
-<http://localhost/>.
+`index.txt`. The template is now available from <http://localhost/>.
 
 The following implementations are available:
 
@@ -50,6 +49,7 @@ The following implementations are available:
         Firefox tends to store partial files in its download directory
 -   On a server:
     -   Works in Firefox, Chrome, Safari and Internet Explorer
+    -   Can use any file extension
 
 Similar methods: ~~[$.load()](http://api.jquery.com/load/)~~,
     ~~[XMLHttpRequest](http://stackoverflow.com/questions/14446447/javascript-read-local-text-file)~~.
