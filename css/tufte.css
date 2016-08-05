@@ -38,10 +38,11 @@
 /* Tufte CSS styles */
 html { font-size: 15px; }
 
-body { width: 87.5%;
+body {
+       /* width: 87.5%; */
        margin-left: auto;
        margin-right: auto;
-       padding-left: 12.5%;
+       /* padding-left: 12.5%; */
        font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
        background-color: #fffff8;
        color: #111;
@@ -109,15 +110,15 @@ div.epigraph > blockquote > footer > cite { font-style: italic; }
 
 blockquote { font-size: 1.4rem; }
 
-blockquote p { width: 50%; }
+/* blockquote p { width: 50%; } */
 
 blockquote footer { width: 50%;
                     font-size: 1.1rem;
                     text-align: right; }
 
-ol, ul { width: 45%;
-         -webkit-padding-start: 5%;
-         -webkit-padding-end: 5%; }
+/* ol, ul { width: 45%; */
+/*          -webkit-padding-start: 5%; */
+/*          -webkit-padding-end: 5%; } */
 
 li { padding: 0.5rem 0; }
 
@@ -126,7 +127,7 @@ figure { padding: 0;
          font-size: 100%;
          font: inherit;
          vertical-align: baseline;
-         max-width: 55%;
+         /* max-width: 55%; */
          -webkit-margin-start: 0;
          -webkit-margin-end: 0;
          margin: 0 0 3em 0; }
@@ -140,7 +141,8 @@ figcaption { float: right;
              line-height: 1.6;
              vertical-align: baseline;
              position: relative;
-             max-width: 40%; }
+             /* max-width: 40%; */
+                             }
 
 figure.fullwidth figcaption { margin-right: 24%; }
 
@@ -171,7 +173,7 @@ img { max-width: 100%; }
 .sidenote, .marginnote { float: right;
                          clear: right;
                          margin-right: -60%;
-                         width: 50%;
+                         /* width: 50%; */
                          margin-top: 0;
                          margin-bottom: 0;
                          font-size: 1.1rem;
@@ -182,7 +184,7 @@ img { max-width: 100%; }
 .table-caption { float:right;
                  clear:right;
                  margin-right: -60%;
-                 width: 50%;
+                 /* width: 50%; */
                  margin-top: 0;
                  margin-bottom: 0;
                  font-size: 1.0rem;
@@ -203,20 +205,22 @@ img { max-width: 100%; }
 .sidenote:before { content: counter(sidenote-counter) " ";
                    top: -0.5rem; }
 
-p, footer, table, div.table-wrapper-small, div.supertable-wrapper > p, div.booktabs-wrapper { width: 55%; }
+/* p, footer, table, div.table-wrapper-small, div.supertable-wrapper > p, div.booktabs-wrapper { width: 55%; } */
 
 div.fullwidth, table.fullwidth { width: 100%; }
 
 div.table-wrapper { overflow-x: auto;
                     font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif; }
 
-@media screen and (max-width: 760px) { p, footer { width: 90%; }
-                                       pre.code { width: 87.5%; }
-                                       ul { width: 85%; }
-                                       figure { max-width: 90%; }
+@media screen and (max-width: 760px) {
+                                       /* p, footer { width: 90%; } */
+                                       /* pre.code { width: 87.5%; } */
+                                       /* ul { width: 85%; } */
+                                       /* figure { max-width: 90%; } */
                                        figcaption, figure.fullwidth figcaption { margin-right: 0%;
                                                                                  max-width: none; }
-                                       blockquote p, blockquote footer { width: 90%; }}
+                                       /* blockquote p, blockquote footer { width: 90%; }  */
+                                                                                      }
 
 .sans { font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
         letter-spacing: .03em; }
@@ -229,11 +233,13 @@ h1 .code, h2 .code, h3 .code { font-size: 0.80em; }
 
 .marginnote .code, .sidenote .code { font-size: 1rem; }
 
-pre.code { width: 52.5%;
+pre.code {
+           /* width: 52.5%; */
            padding-left: 2.5%;
            overflow-x: auto; }
 
-.fullwidth { max-width: 90%;
+.fullwidth {
+             /* max-width: 90%; */
              clear:both; }
 
 span.newthought { font-variant: small-caps;
@@ -272,3 +278,40 @@ label.margin-toggle:not(.sidenote-number) { display: none; }
                             div.table-wrapper, table, table.booktabs { width: 85%; }
                             div.table-wrapper { border-right: 1px solid #efefef; }
                             img { width: 100%; } }
+
+body {
+    font-family: "Minion Pro", Minion, "Minion Web", "Adobe Garamond Pro", "Garamond Premier Pro", "ITC Garamond Std", Garamond, Baskerville, "Baskerville Old Face", "Crimson Text", Crimson, "Iowan Old Style", Iowan, "Iowan Web", Georgia, Charter, "Hoefler Text", "Calisto MT", Constantia, Andalus, Centaur, Cambria, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, Baskerville, serif !important;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    text-rendering: optimizelegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+code, kbd, samp, tt {
+    padding: 0;
+    white-space: nowrap;
+}
+
+code, pre {
+    background-color: inherit;
+    border-radius: 0;
+    border: none;
+    color: inherit;
+    font-family: Consolas, "Consolas Web", Menlo, Monaco, "Liberation Mono", Courier, monospace !important;
+    font-size: 0.7em;
+    -moz-osx-font-smoothing: auto;
+}
+
+pre {
+    padding: 0 0 0 2.8em;
+}
+
+pre code {
+    font-size: 1.5em !important;
+}
+
+body > .container {
+    max-width: 740px;
+    padding: 0px 20px 0 20px;
+}
