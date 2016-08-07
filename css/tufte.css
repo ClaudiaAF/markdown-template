@@ -300,7 +300,7 @@ code, pre {
     color: inherit;
     font-family: Consolas, "Consolas Web", Menlo, Monaco, "Liberation Mono", Courier, monospace !important;
     font-size: 0.7em;
-    -moz-osx-font-smoothing: auto;
+    /* -moz-osx-font-smoothing: auto; */
 }
 
 pre {
