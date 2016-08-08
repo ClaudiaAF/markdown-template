@@ -5,6 +5,7 @@ var anchor = window.markdownItAnchor
 var sub = window.markdownitSub
 var sup = window.markdownitSup
 var footnote = window.markdownitFootnote
+var abbr = window.markdownitAbbr
 var mathjax = window.markdownitMathjax
 
 var md = window.markdownit({
@@ -24,6 +25,7 @@ var md = window.markdownit({
   .use(sub)
   .use(sup)
   .use(footnote)
+  .use(abbr)
   .use(mathjax)
 
 function loadIframe (iframe) {

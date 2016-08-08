@@ -1,3 +1,8 @@
+abbr, abbr[title], abbr[data-original-title] {
+    /* border-bottom: none; */
+    text-decoration: none;
+}
+
 a:hover, a:focus {
     color: #23527c;
 }
