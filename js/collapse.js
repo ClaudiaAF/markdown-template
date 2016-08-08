@@ -34,6 +34,9 @@
                  button.click($.fn.addCollapsibleSections.clickHandler(button, header, section, opts.collapse, opts.expand, opts.show, opts.hide))
 
                  // allow pre-collapsed sections
+                 if (header.hasClass('collapse')) {
+                   header.removeClass('collapse').addClass('collapsed')
+                 }
                  if (header.hasClass('collapsed')) {
                    section.toggle()
                    button.attr('title', opts.expand)
