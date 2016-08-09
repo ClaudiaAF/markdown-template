@@ -33,6 +33,11 @@
     <script src="js/hanging.js"></script>
     <script src="js/highlight.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+      $.fn.addCollapsibleSections.defaults.include = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+      $.fn.addCollapsibleSections.defaults.show = '[+]'
+      $.fn.addCollapsibleSections.defaults.hide = '[\u2212]' // minus
+    </script>
   </head>
   <body>
     <div class="container">
