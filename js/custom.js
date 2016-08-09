@@ -4,6 +4,7 @@ var attr = window.markdownItAttrs
 var anchor = window.markdownItAnchor
 var sub = window.markdownitSub
 var sup = window.markdownitSup
+var deflist = window.markdownitDeflist
 var footnote = window.markdownitFootnote
 var abbr = window.markdownitAbbr
 var mathjax = window.markdownitMathjax
@@ -24,6 +25,7 @@ var md = window.markdownit({
   .use(anchor, {permalink: true, permalinkBefore: true})
   .use(sub)
   .use(sup)
+  .use(deflist)
   .use(footnote)
   .use(abbr)
   .use(mathjax)
