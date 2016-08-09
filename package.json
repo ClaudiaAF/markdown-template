@@ -8,7 +8,8 @@
   "scripts": {
     "edit": "emacs mail.txt",
     "start": "run.bat",
-    "test": "jshint js/custom.js && standard js/custom.js && markdownlint mail.txt"
+    "test": "jshint js/custom.js && standard js/custom.js && markdownlint mail.txt",
+    "build": "inliner index.html > dist/index.html"
   },
   "url": "https://github.com/epsil/markdown-template"
 }

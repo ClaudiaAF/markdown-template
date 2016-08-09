@@ -6,9 +6,9 @@ E-postmal
 Bruk
 ----
 
-Rediger `mail.txt` i en teksteditor.
+Rediger `index.txt` i en teksteditor.
 
-Åpne `index.html` i Internet Explorer.
+Ã…pne `index.html` i Internet Explorer.
 
 Marker all teksten fra start til slutt. (Ikke trykk *Merk alt* eller
 `Ctrl+A`; lag en manuell markering.) Kopier teksten til utklippstavlen
