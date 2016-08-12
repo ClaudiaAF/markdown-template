@@ -73,6 +73,7 @@ function process (body) {
   $('html').addHangingPunctuation()
   $('body').fixAnchors()
   $('body').fixFootnotes()
+  $('body').fixLinks()
   $('body').removeEmptyTableHeaders()
   $('html').addTitle()
   $('html').addForkButton()

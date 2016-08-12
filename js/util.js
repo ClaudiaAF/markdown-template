@@ -45,6 +45,27 @@
     })
   }
 
+  $.fn.fixLinks = function () {
+    return this.each(function () {
+      var body = $(this)
+      body.find('a[href^="#"]').each(function () {
+        var link = $(this)
+        var href = link.attr('href')
+        var title = link.attr('title')
+        if (link.attr('aria-hidden') === 'true' || href === '#' ||
+            (title !== undefined && title !== '')) {
+          return
+        }
+        var target = body.find(href)
+        if (target.length <= 0) {
+          return
+        }
+        var text = target.removeAria().text()
+        link.attr('title', text)
+      })
+    })
+  }
+
   $.fn.removeEmptyTableHeaders = function () {
     return this.each(function () {
       $(this).find('thead').filter(function (i) {
