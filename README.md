@@ -60,6 +60,12 @@ Miscellaneous
 The example text is the article
 [General Parser Combinators in Racket](https://epsil.github.io/gll/).
 
+A somewhat similar project is
+[Markdeep](https://casual-effects.com/markdeep/) by Morgan McGuire.
+There, both the document and the parser is stored in a single file
+with the extension `.md.html`, which behaves appropriately whether it
+is opened in a text editor or a browser.
+
 License
 -------
 
