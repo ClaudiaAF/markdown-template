@@ -22,7 +22,7 @@ h1:hover .collapse-button, h2:hover .collapse-button, h3:hover .collapse-button,
 }
 
 .collapse-button {
-    color: rgba(0, 0, 0, 0.0);
+    color: rgba(0, 0, 0, 0.0) !important;
     cursor: pointer;
     min-width: 1.5em;
     position: absolute;
