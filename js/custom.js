@@ -74,7 +74,7 @@ function process (body) {
   $('body').fixAnchors()
   $('body').fixFootnotes()
   $('body').fixLinks()
-  $('body').removeEmptyTableHeaders()
+  $('body').fixTables()
   $('html').addTitle()
   $('html').addForkButton()
   MathJax.Hub.Queue(['Typeset', MathJax.Hub])
