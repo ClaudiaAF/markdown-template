@@ -3,6 +3,7 @@
  * https://github.com/simonwhitaker/github-fork-ribbon-css
  */
 
+
 .github-fork-ribbon {
     width: 12.1em;
     height: 12.1em;
@@ -133,4 +134,10 @@
 .github-fork-ribbon:hover:before {
     background-color: #a00;
     transition: all 0.5s;
+}
+
+@media (max-width: 900px) {
+    .github-fork-ribbon + div {
+        margin-top: 80px;
+    }
 }

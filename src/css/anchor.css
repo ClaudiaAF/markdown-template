@@ -5,11 +5,11 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
 }
 
 .container .header-anchor {
-    border: none;
-    color: #ffffff;
+    color: rgba(0, 0, 0, 0.0);
     display: inline-block;
+    font-style: normal;
     font-weight: normal;
-    left: -0.7em;
+    left: -1em;
     position: absolute;
     transition: all 0.5s;
     user-select: none;           /* Non-prefixed version */
@@ -25,6 +25,6 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
 }
 
 .header-anchor:before {
-    /* content: "\00B6"; */
-    content: "#";
+    content: "\F0C1"; /* fa-link */
+    font-family: FontAwesome;
 }

@@ -1,4 +1,5 @@
 *.DS_Store
+*.sh
+*.bin
 *.log
-*.html
-*.txt
+test.html
