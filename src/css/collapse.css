@@ -43,11 +43,9 @@ h1:hover .collapse-button, h2:hover .collapse-button, h3:hover .collapse-button,
 }
 
 .collapse-button:before {
-    content: "\F078"; /* chevron-down */
-    font-family: FontAwesome;
+    content: "[+]";
 }
 
 .collapse-button[aria-expanded="true"]:before {
-    content: "\F077"; /* chevron-up */
-    font-family: FontAwesome;
+    content: "[\2212]";
 }
