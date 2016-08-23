@@ -1,3 +1,7 @@
+/* CSS inliner pacifier */
+.class {
+}
+
 .startsWithDoubleQuote {
     text-indent: -0.4em;
 }

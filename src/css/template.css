@@ -1,3 +1,7 @@
+/* CSS inliner pacifier */
+.class {
+}
+
 iframe {
     display: none;
 }

@@ -1,3 +1,7 @@
+/* CSS inliner pacifier */
+.class {
+}
+
 /* .toc ul > li:before, .container .task-list > li:before { */
 /*     content: "" !important; */
 /*     margin-left: 0; */
