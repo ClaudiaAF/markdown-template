@@ -1,7 +1,4 @@
-h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:hover .header-anchor, h5:hover .header-anchor, h6:hover .header-anchor {
-    color: #cccccc;
-    text-decoration: none;
-    transition: all 0.5s;
+.container .header-anchor {
 }
 
 .container .header-anchor {
@@ -26,6 +23,12 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
 
 .header-anchor:before {
     content: "#";
+}
+
+h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:hover .header-anchor, h5:hover .header-anchor, h6:hover .header-anchor {
+    color: #cccccc;
+    text-decoration: none;
+    transition: all 0.5s;
 }
 
 @media (max-width: 767px) {
