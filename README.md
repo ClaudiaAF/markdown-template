@@ -7,9 +7,35 @@ Markdown template
 Usage
 -----
 
-Edit `index.txt` in a text editor.
+### Method #1: `.txt` file and `.html` file
 
-Open `index.html` in a browser to see the result.
+Create a text file called `index.txt` and put `index.html` in the same folder.
+
+To edit the document, open `index.txt` in a text editor.
+
+To view the document, open `index.html` in a browser.
+
+### Method #2: `.md.html` file
+
+Create a file called `index.md.html` that contains the document text followed by a special `<script>` line:
+
+    This is a *Markdown* document.
+
+    ...
+
+    <script src="markdown-template.js"></script><script src="https://github.com/epsil/markdown-template/raw/webpack/src/js/markdown-template.js"></script>
+
+To edit the document, open `index.md.html` in a text editor.
+
+To view the document, open `index.md.html` in a browser.
+
+(If `markdown-template.js` is stored locally in the same folder, it performs the conversion; otherwise, the code is downloaded from the Internet.)
+
+### Method #3: Convert manually
+
+It is also possible to invoke the template from the command line. To convert `index.txt` to `index.html`, do:
+
+    $ node src/lib/build.js index.txt index.html
 
 Implementation
 --------------
@@ -45,8 +71,6 @@ The following implementations are available:
 -   The file can have any extension (e.g., `.md`)
 -   Locally:
     -   Works in Firefox
-    -   The file extension `.txt` is recommended because otherwise,
-        Firefox tends to store partial files in its download directory
 -   On a server:
     -   Works in Firefox, Chrome, Safari and Internet Explorer
     -   Can use any file extension

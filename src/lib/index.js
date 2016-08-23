@@ -97,11 +97,21 @@ function loadData () {
     var link = $('link[type="text/markdown"]')
     if (link.length > 0) {
       file = link.attr('href')
+      // replace <body> with converted data from file
+      // loadFile(file).then(convert).then(process).then(typeset)
+      loadFile(file).then(convert).then(typeset)
+    } else if (window.converted !== true) {
+      var body = $('body')
+      body.find('script').remove()
+      body.css('white-space', 'pre')
+      var data = body.text()
+      body.css('white-space', 'normal')
+      convert(data)
+      typeset()
     }
-    // replace <body> with converted data from file
-    // loadFile(file).then(convert).then(process).then(typeset)
-    loadFile(file).then(convert).then(typeset)
   }
+
+  window.converted = true
 }
 
 $(function () {
