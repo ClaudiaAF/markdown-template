@@ -8,7 +8,7 @@
   "scripts": {
     "build": "npm run webpack && npm run standalone",
     "browser": "browserify src/lib/index.js -o src/js/markdown-template.js && browserify src/test/index.js -o src/test/test.js",
-    "webpack": "webpack --module-bind json --optimize-minimize src/lib/index.js src/js/markdown-template.js",
+    "webpack": "cd src && webpack lib/index.js js/markdown-template.js",
     "standalone": "inliner src/index.html > dist/index.html",
     "test": "npm run spec && npm run lint",
     "spec": "npm run browser && open src/test/index.html",
@@ -47,6 +47,7 @@
     "moment": "^2.14.1",
     "string": "^3.3.1",
     "tidy-html5": "^0.1.1",
-    "urijs": "^1.18.1"
+    "urijs": "^1.18.1",
+    "webpack": "^1.13.2"
   }
 }

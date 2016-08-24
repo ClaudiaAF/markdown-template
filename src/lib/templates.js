@@ -11,7 +11,6 @@ templates.document = Handlebars.compile(
   '<meta content="text/css" http-equiv="Content-Style-Type">\n' +
   '<meta content="width=device-width, initial-scale=1" name="viewport">\n' +
   '<link href="{{urlResolve url "/favicon.ico"}}" rel="icon" type="image/x-icon">\n' +
-  '<link href="{{urlResolve url "/css/markdown-template.css"}}" rel="stylesheet">\n' +
   '<link href="index.txt" rel="alternate" title="Markdown" type="text/markdown">\n' +
   '{{#if css}}' +
   '<link href="{{urlResolve url css}}" rel="stylesheet" type="text/css">\n' +
@@ -24,6 +23,9 @@ templates.document = Handlebars.compile(
   '{{/if}}' +
   '<script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>\n' +
   '<script src="{{urlResolve url "/js/markdown-template.js"}}"></script>\n' +
+  '<style type="text/css">\n' +
+  '{{{style}}}' +
+  '</style>\n' +
   '</head>\n' +
   '<body>\n' +
   '{{{content}}}' +
