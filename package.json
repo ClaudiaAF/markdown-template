@@ -6,7 +6,7 @@
     "url": "https://github.com/epsil/markdown-template.git"
   },
   "scripts": {
-    "build": "npm run webpack && npm run standalone",
+    "build": "npm run webpack && npm run standalone && npm run lint",
     "browser": "browserify src/lib/index.js -o src/js/markdown-template.js && browserify src/test/index.js -o src/test/test.js",
     "webpack": "cd src && webpack lib/index.js js/markdown-template.js",
     "standalone": "inliner src/index.html > dist/index.html",

@@ -17,13 +17,13 @@ To view the document, open `index.html` in a browser.
 
 ### Method #2: `.md.html` file
 
-Create a file called `index.md.html` that contains the document text followed by a special `<script>` line:
+Create a file called `index.md.html` that contains the document text followed by a `<script>` link:
 
     This is a *Markdown* document.
 
     ...
 
-    <script src="markdown-template.js"></script><script src="https://github.com/epsil/markdown-template/raw/webpack/src/js/markdown-template.js"></script>
+    <meta charset="utf-8"><script src="markdown-template.js"></script><script src="https://github.com/epsil/markdown-template/raw/webpack/src/js/markdown-template.js"></script>
 
 To edit the document, open `index.md.html` in a text editor.
 

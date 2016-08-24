@@ -1,4 +1,4 @@
-/* global MathJax */
+/* global MathJax, window */
 var $ = require('jquery')
 var URI = require('urijs')
 var compile = require('./compile')
@@ -14,7 +14,9 @@ function url () {
 
 // enable MathJax rendering
 function typeset (document) {
-  MathJax.Hub.Queue(['Typeset', MathJax.Hub])
+  if (typeof MathJax !== 'undefined') {
+    MathJax.Hub.Queue(['Typeset', MathJax.Hub])
+  }
   return document
 }
 
@@ -88,6 +90,10 @@ function loadAjax (iframe) {
 // read Markdown from <iframe> or file and
 // insert the converted HTML into the document
 function loadData () {
+  if (window.converted) {
+    return
+  }
+
   var file = 'index.txt'
   var iframe = $('iframe').first()
   if (iframe.length > 0) {
@@ -95,16 +101,27 @@ function loadData () {
     // replace <iframe> with its converted contents
     loadIframe(iframe).then(convert).then(typeset)
   } else {
-    // <body> contains no <iframe>: get file from <link> element
-    // (or default to index.txt)
+    // <body> contains no <iframe>:
+    // get file from <link> element
     var link = $('link[type="text/markdown"]')
     if (link.length > 0) {
       file = link.attr('href')
+      // replace <body> with converted data from file
+      // loadFile(file).then(convert).then(process).then(typeset)
+      loadFile(file).then(convert).then(typeset)
+    } else {
+      // fall-back: assume whole document is Markdown
+      // (with an embedded <script> tag)
+      var body = $('body')
+      body.css({'visibility': 'hidden', 'white-space': 'pre'})
+      var data = body.text()
+      convert(data)
+      typeset(body)
+      body.css({'visibility': '', 'white-space': ''})
     }
-    // replace <body> with converted data from file
-    // loadFile(file).then(convert).then(process).then(typeset)
-    loadFile(file).then(convert).then(typeset)
   }
+
+  window.converted = true
 }
 
 $(function () {
