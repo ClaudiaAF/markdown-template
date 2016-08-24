@@ -22,30 +22,32 @@ function typeset (document) {
 function convert (data) {
   var html = compile(data, url())
   // browser strips <html>, <head> and <body> tags
-  html = html.replace('<body>', '<div class="body">')
+  html = html.replace('<head>', '<div class="head">')
+             .replace('</head>', '</div>')
+             .replace('<body>', '<div class="body">')
              .replace('</body>', '</div>')
   var doc = $('<div>').html(html)
-  var body = doc.find('div.body')
-  $('body').html(body.html())
-  return $('html')
-}
-
-// like convert(), but reads contents of element and replaces it
-function convertIt (container) {
-  var data = container.text().trim()
-  var html = compile(data, url())
-  // browser strips <html>, <head> and <body> tags
-  html = html.replace('<body>', '<div class="body">')
-             .replace('</body>', '</div>')
-  var doc = $('<div>').html(html)
-  var body = doc.find('div.body')
-  $('body').html(body.html())
+  // add tags to <head>
+  var head = $('head')
+  var headDiv = doc.find('div.head')
+  headDiv.find('link, style').appendTo(head)
+  headDiv.find('title').each(function () {
+    head.find('title').text($(this).text())
+  })
+  // add content to <body>
+  var body = $('body')
+  var bodyDiv = doc.find('div.body')
+  body.html(bodyDiv.html())
   return $('html')
 }
 
 // read contents of <iframe>
 function loadIframe (iframe) {
   var deferred = $.Deferred()
+  var file = iframe.attr('src')
+  if (!file.match(/\.txt$/)) {
+    return loadAjax(iframe)
+  }
   iframe.hide()
   iframe.on('load', function () {
     var contents = iframe.contents().text().trim()
@@ -53,7 +55,8 @@ function loadIframe (iframe) {
     div.text(contents)
     div.insertBefore(iframe)
     iframe.remove()
-    deferred.resolve(div)
+    var data = div.text().trim()
+    deferred.resolve(data)
   })
   return deferred.promise()
 }
@@ -72,12 +75,12 @@ function loadAjax (iframe) {
   var deferred = $.Deferred()
   iframe.hide()
   var src = iframe.attr('src')
-  var div = $('<div>')
+  var div = $('<div style="display: none">')
   div.insertBefore(iframe)
   iframe.remove()
   loadFile(src).then(function (data) {
     div.text(data)
-    deferred.resolve(div)
+    deferred.resolve(data)
   })
   return deferred.promise()
 }
@@ -90,28 +93,18 @@ function loadData () {
   if (iframe.length > 0) {
     // <body> contains <iframe src="index.txt">:
     // replace <iframe> with its converted contents
-    loadIframe(iframe).then(convertIt).then(typeset)
+    loadIframe(iframe).then(convert).then(typeset)
   } else {
     // <body> contains no <iframe>: get file from <link> element
     // (or default to index.txt)
     var link = $('link[type="text/markdown"]')
     if (link.length > 0) {
       file = link.attr('href')
-      // replace <body> with converted data from file
-      // loadFile(file).then(convert).then(process).then(typeset)
-      loadFile(file).then(convert).then(typeset)
-    } else if (window.converted !== true) {
-      var body = $('body')
-      body.find('script').remove()
-      body.css('white-space', 'pre')
-      var data = body.text()
-      body.css('white-space', 'normal')
-      convert(data)
-      typeset()
     }
+    // replace <body> with converted data from file
+    // loadFile(file).then(convert).then(process).then(typeset)
+    loadFile(file).then(convert).then(typeset)
   }
-
-  window.converted = true
 }
 
 $(function () {

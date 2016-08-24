@@ -1,7 +1,3 @@
-/* CSS inliner pacifier */
-.class {
-}
-
 .container .header-anchor {
     color: rgba(0, 0, 0, 0.0);
     display: inline-block;

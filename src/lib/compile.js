@@ -14,6 +14,7 @@ var Handlebars = require('handlebars')
 var URI = require('urijs')
 var templates = require('./templates')
 var abbrev = require('./abbrev')
+var style = require('../css/markdown-template.css')
 require('./anchor')
 require('./collapse')
 require('./section')
@@ -26,7 +27,7 @@ require('./util')
 
 var document = templates.document
 var body = templates.body
-var defaults = {lang: 'no', toc: true, tocTitle: 'Innhold'}
+var defaults = {lang: 'no', style: style, toc: true, tocTitle: 'Innhold'}
 
 function dateFormat (context, block) {
   if (moment) {
