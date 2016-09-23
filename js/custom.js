@@ -11,7 +11,12 @@ md.use(sup)
 
 function convert (markdown) {
   var html = md.render(markdown)
+  html = addLineBreaks(html)
   $('body').append(html)
+}
+
+function addLineBreaks (html) {
+  return html.replace(/<\/p>\s*<p>/g, '<br><br>')
 }
 
 function floats () {
